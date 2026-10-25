@@ -47,11 +47,13 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
             <div class="item-title"><h3>{item.title}</h3><span>{item.area}</span></div>
             <p class="project-vision-label">Long-term vision</p>
             <p class="project-vision">{item.description}</p>
+            <p class="project-collaboration"><span>Collaboration</span>{item.collaboration}</p>
             <small class="research-project-status">{item.note}</small>
             {publications.filter((paper) => paper.project === item.title).map((paper) => <div class="research-work">
               <p class="research-work-label">Related research</p>
               <h4 class="research-work-title">{paper.title}</h4>
               <p class="research-work-role">{paper.projectRole}</p>
+              {paper.collaboration && <p class="research-work-collaboration"><span>Collaboration</span>{paper.collaboration}</p>}
               <small class="research-work-status">{paper.venue}</small>
             </div>)}
           </article>)}
@@ -204,11 +206,14 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .item-title span { color:#79807b; font-size:10px; }
     .project-vision-label,.research-work-label { margin:14px 0 4px; color:#718075; font-size:9px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
     .project-vision { margin:0 0 8px; color:#626964; font-size:12px; line-height:1.65; }
+    .project-collaboration { margin:11px 0 8px; color:#596a5e; font-size:10px; line-height:1.5; }
+    .project-collaboration span,.research-work-collaboration span { margin-right:7px; color:#718075; font-size:9px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; }
     .research-project-status { color:#79807b; font-size:10px; }
     .research-work { margin-top:15px; padding:12px; border-left:2px solid #bdcbbf; background:#f5f7f4; }
     .research-work-label { margin:0 0 5px; }
     .research-work-title { margin:0 0 5px; color:#39443c; font-size:11px; font-weight:600; line-height:1.5; }
     .research-work-role { margin:0 0 6px; color:#626964; font-size:11px; line-height:1.6; }
+    .research-work-collaboration { margin:0 0 6px; color:#596a5e; font-size:10px; }
     .research-work-status { display:block; color:#718075; font-size:9px; }
     .independent-work { margin-top:18px; padding:12px 14px; border:1px solid #edf0ed; }
     .independent-work-status { color:#718075; font-size:9px; letter-spacing:.06em; text-transform:uppercase; }
