@@ -14,7 +14,6 @@ export const research = [
   { number: '01', title: 'I-DocAssist', area: 'Agentic AI · Healthcare', description: 'An agentic system for clinical prior authorization workflows, connecting insurance policy understanding with patient-specific compliance assessment and interactive clinician support.', note: 'Research in progress', accent: 'green' },
   { number: '02', title: 'CELaRAI', area: 'LLMs · Early literacy', description: 'Developing language model–based comprehension question generation and automated assessment for an interdisciplinary initiative in personalized early literacy education.', note: 'Research in progress', accent: 'peach' },
   { number: '03', title: 'LLM judges & ASR', area: 'Evaluation · Speech', description: 'Studying how transcription quality affects LLM-judge scores, using children’s question-answer grading as a case study.', note: 'Under review at ICASSP 2027', accent: 'blue' },
-  { number: '04', title: 'Dialogue state tracking', area: 'Conversational AI · Uncertainty', description: 'Exploring confidence estimation and accountability modeling to help dialogue systems recognize mistakes and reduce overreliance.', note: 'Published at SLT 2024 and ACL 2025', accent: 'gold' },
 ];
 
 export const publications = [
