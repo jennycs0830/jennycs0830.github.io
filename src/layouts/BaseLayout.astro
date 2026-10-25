@@ -1,0 +1,23 @@
+---
+const { title = 'Yi-Jyun Sun | Research Portfolio', description = 'Research portfolio of Yi-Jyun (Jenny) Sun.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f5f4ee" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+    <style is:global>
+      :root { font-family:'DM Sans',sans-serif; color:#18251f; background:#f5f4ee; scroll-behavior:smooth; }
+      body { margin:0; } ::selection { background:#d9e4d8; color:#18251f; }
+      a { color:inherit; } .mono { font-family:'DM Mono',monospace; } .serif { font-family:'Newsreader',Georgia,serif; }
+      .grain { background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.84' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E"); }
+    </style>
+  </head>
+  <body><slot /></body>
+</html>
