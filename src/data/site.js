@@ -26,12 +26,12 @@ export const publications = [
 ];
 
 export const experience = [
-  { role: 'Graduate Research Assistant', org: 'ConvAI Lab · University of Illinois Urbana-Champaign', dates: 'Aug 2025 — Present', detail: 'Research on agentic AI for clinical prior authorization and language technology for personalized early literacy.', current: true },
-  { role: 'Applied Scientist Intern', org: 'Amazon · One Medical Product Development', dates: 'May — Aug 2026', detail: 'Healthcare AI internship. Project details are kept high-level for public sharing.', pending: true },
-  { role: 'Machine Learning Intern', org: 'Omniguider · Foxconn Technology Group', dates: 'Jul — Aug 2025', detail: 'Built a library recommender for 40K+ books using language-model profiling, embeddings, an autoencoder, and clustering; delivered it in an interactive Streamlit app.' },
-  { role: 'AI Intern', org: 'Big Data Mobile', dates: 'Feb — Jun 2025', detail: 'Developed an ECG arrhythmia classifier and a Python toolkit for signal segmentation, annotation, and resampling.' },
-  { role: 'LLM Application Development Intern', org: 'Industrial Technology Research Institute', dates: 'May — Dec 2024', detail: 'Built a content extraction and article-filling tool for a news outlet and explored adversarial prompting methods.' },
-  { role: 'Undergraduate Research Assistant', org: 'ConvAI Lab · University of Illinois Urbana-Champaign', dates: 'May — Aug 2024', detail: 'Researched uncertainty estimation for dialogue state tracking and accountability modeling for task-oriented dialogue agents.' },
+  { mark: 'UIUC', role: 'Graduate Research Assistant', org: 'ConvAI Lab · University of Illinois Urbana-Champaign', dates: 'Aug 2025 — Present', detail: 'Research on agentic AI for clinical prior authorization and language technology for personalized early literacy.', current: true },
+  { mark: 'a', role: 'Applied Scientist Intern', org: 'Amazon · One Medical Product Development', dates: 'May — Aug 2026', detail: 'Healthcare AI internship. Project details are kept high-level for public sharing.', pending: true },
+  { mark: 'FOX', role: 'Machine Learning Intern', org: 'Omniguider · Foxconn Technology Group', dates: 'Jul — Aug 2025', detail: 'Built a library recommender for 40K+ books using language-model profiling, embeddings, an autoencoder, and clustering; delivered it in an interactive Streamlit app.' },
+  { mark: 'BDM', role: 'AI Intern', org: 'Big Data Mobile', dates: 'Feb — Jun 2025', detail: 'Developed an ECG arrhythmia classifier and a Python toolkit for signal segmentation, annotation, and resampling.' },
+  { mark: 'ITRI', role: 'LLM Application Development Intern', org: 'Industrial Technology Research Institute', dates: 'May — Dec 2024', detail: 'Built a content extraction and article-filling tool for a news outlet and explored adversarial prompting methods.' },
+  { mark: 'UIUC', role: 'Undergraduate Research Assistant', org: 'ConvAI Lab · University of Illinois Urbana-Champaign', dates: 'May — Aug 2024', detail: 'Researched uncertainty estimation for dialogue state tracking and accountability modeling for task-oriented dialogue agents.' }
 ];
 
 export const education = [

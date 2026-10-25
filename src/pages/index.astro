@@ -57,6 +57,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
         <div class="section-heading"><p class="eyebrow">Research & industry</p><h2>Experience</h2></div>
         <div class="experience-list">
           {experience.map((item) => <article class="experience-item">
+            <span class="company-mark" aria-label={`${item.org} mark`}>{item.mark}</span>
             <div><h3>{item.role}</h3><p class="org">{item.org}</p><p class="detail">{item.detail}</p></div>
             <p class="dates">{item.dates}</p>
           </article>)}
@@ -134,7 +135,9 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .all-papers-link span { margin-left:3px; }
     .status { align-self:start; padding-top:2px; color:#a26b45; font-size:9px; letter-spacing:.04em; text-transform:uppercase; white-space:nowrap; }
     .status.published { color:#547259; }
-    .experience-item,.education-list article { display:grid; grid-template-columns:1fr auto; gap:18px; padding:16px 0; border-top:1px solid #edf0ed; }
+    .experience-item,.education-list article { display:grid; grid-template-columns:34px minmax(0,1fr) auto; align-items:start; gap:13px; padding:16px 0; border-top:1px solid #edf0ed; }
+    .company-mark { display:grid; width:30px; height:30px; place-items:center; border:1px solid #e4e9e3; border-radius:7px; background:#f6f8f5; color:#58705c; font-size:8px; font-weight:700; letter-spacing:-.02em; }
+    .company-mark[aria-label^="Amazon"] { color:#a66a32; font-family:Georgia,serif; font-size:21px; font-weight:400; }
     .org { margin:0 0 6px; color:#566e5c; font-size:12px; }
     .detail { max-width:600px; margin:0; color:#666d68; font-size:12px; line-height:1.65; }
     .dates { margin:2px 0 0; color:#7c837e; font-size:10px; white-space:nowrap; }
@@ -160,7 +163,11 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
       .research-list { grid-template-columns:1fr; }
       .publication-item { grid-template-columns:112px minmax(0,1fr); gap:12px; }
       .publication-figure img { height:76px; }
-      .experience-item,.education-list article { grid-template-columns:1fr; gap:5px; }
+      .experience-item { grid-template-columns:30px minmax(0,1fr); gap:8px 11px; }
+      .experience-item .dates { grid-column:2; grid-row:1; margin-top:0; }
+      .experience-item > div { grid-column:2; }
+      .experience-item > .company-mark { grid-column:1; grid-row:1 / span 2; }
+      .education-list article { grid-template-columns:1fr; gap:5px; }
       .basketball-note { grid-template-columns:1fr; gap:18px; padding:19px; }
       .court-mark { width:86px; height:86px; }
       .court-mark::before { width:50px; height:50px; }
