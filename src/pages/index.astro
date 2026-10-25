@@ -74,10 +74,10 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
       <section class="content-section outside-section" id="outside">
         <div class="section-heading"><p class="eyebrow">Life beyond research</p><h2>Outside the lab</h2></div>
         <div class="basketball-note">
-          <div class="court-mark" aria-hidden="true"><span></span></div>
+          <img class="basketball-photo" src="/images/basketball-jenny.jpg" alt="Jenny playing basketball for National Yang Ming Chiao Tung University." loading="lazy" />
           <div>
-            <h3>Basketball</h3>
-            <p>Basketball is one of the things I keep coming back to. I love the pace of the game, the teamwork, and the small decisions that change a play. My interest has followed me off the court too: I put together a small dataset of basketball clips labeled for defense, dribbling, shooting, passing, and more.</p>
+            <h3>Student-athlete & captain</h3>
+            <p>During my undergraduate years at National Yang Ming Chiao Tung University (NYCU), I played Division II basketball in Taiwan’s University Basketball Association (UBA) and served as captain of the school team. I also received the NYCU Women’s Basketball Scholarship. Basketball remains a big part of my life—and inspired me to build a small basketball-action dataset.</p>
             <a class="text-link" href="https://github.com/jennycs0830/basketball_action_dataset" target="_blank" rel="noreferrer">Basketball action dataset <span aria-hidden="true">↗</span></a>
           </div>
         </div>
@@ -142,14 +142,12 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .org { margin:0 0 6px; color:#566e5c; font-size:12px; }
     .detail { max-width:600px; margin:0; color:#666d68; font-size:12px; line-height:1.65; }
     .dates { margin:2px 0 0; color:#7c837e; font-size:10px; white-space:nowrap; }
-    .basketball-note { display:grid; grid-template-columns:130px 1fr; gap:26px; align-items:center; padding:22px; background:#f7f8f5; }
+    .basketball-note { display:grid; grid-template-columns:235px 1fr; gap:27px; align-items:center; padding:22px; background:#f7f8f5; }
+    .basketball-photo { display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; object-position:center; }
     .basketball-note h3 { margin-bottom:9px; font-family:'Newsreader',Georgia,serif; font-size:23px; font-weight:400; }
     .basketball-note p { max-width:560px; margin:0 0 12px; color:#626964; font-size:13px; line-height:1.75; }
     .text-link { font-size:11px; }
-    .court-mark { position:relative; display:grid; width:122px; height:122px; place-items:center; overflow:hidden; border:1px solid #d4ddd3; border-radius:50%; background:#edf2ea; }
-    .court-mark::before { width:72px; height:72px; border:1px solid #9bb09b; border-radius:50%; content:''; }
-    .court-mark::after { position:absolute; top:0; bottom:0; width:1px; background:#9bb09b; content:''; }
-    .court-mark span { position:absolute; left:0; right:0; height:1px; background:#9bb09b; }
+    
     .cv-copy { margin:0; color:#626964; font-size:13px; line-height:1.7; }
     footer { display:flex; justify-content:space-between; padding:20px 0 30px; border-top:1px solid #e9ece9; color:#89908b; font-size:10px; }
     footer a { text-decoration:none; }
@@ -170,8 +168,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
       .experience-item > .company-mark { grid-column:1; grid-row:1 / span 2; }
       .education-list article { grid-template-columns:1fr; gap:5px; }
       .basketball-note { grid-template-columns:1fr; gap:18px; padding:19px; }
-      .court-mark { width:86px; height:86px; }
-      .court-mark::before { width:50px; height:50px; }
+      .basketball-photo { width:min(100%,320px); }
       .dates { grid-row:1; }
     }
   </style>
