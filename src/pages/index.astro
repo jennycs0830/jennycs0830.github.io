@@ -49,13 +49,23 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
             {item.url && <p class="project-website"><a href={item.url} target="_blank" rel="noreferrer">Project website <span aria-hidden="true">↗</span></a></p>}
             <p class="project-collaboration"><span>Collaboration</span>{item.collaboration}</p>
             <small class="research-project-status">{item.note}</small>
-            {publications.filter((paper) => paper.project === item.title).map((paper) => <div class="research-work">
-              <p class="research-work-label">Related research</p>
-              <h4 class="research-work-title">{paper.title}</h4>
-              <p class="research-work-role">{paper.projectRole}</p>
-              {paper.collaboration && <p class="research-work-collaboration"><span>Collaboration</span>{paper.collaboration}</p>}
-              <small class="research-work-status">{paper.venue}</small>
-            </div>)}
+            {publications.filter((paper) => paper.project === item.title).map((paper) => <article class="research-publication">
+              <div class="research-publication-visual">
+                {paper.visual && <img src={paper.visual} alt={paper.visualAlt} loading="lazy" />}
+              </div>
+              <div class="research-publication-copy">
+                <p class="research-work-label">Related research</p>
+                <h4 class="research-work-title">{paper.title}</h4>
+                <p class="research-work-authors">{paper.authors.split(/(Y\\.-J\\. Sun)/).map((author) => author === 'Y.-J. Sun' ? <strong class="author-self">{author}</strong> : author)}</p>
+                <p class="research-work-role">{paper.projectRole}</p>
+                {paper.collaboration && <p class="research-work-collaboration"><span>Collaboration</span>{paper.collaboration}</p>}
+                <p class="research-work-venue">{paper.venue}</p>
+                <div class="paper-links">
+                  {paper.url && <a class="paper-link" href={paper.url} target="_blank" rel="noreferrer">Paper <span aria-hidden="true">↗</span></a>}
+                  {paper.codeUrl && <a class="paper-link" href={paper.codeUrl} target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>}
+                </div>
+              </div>
+            </article>)}
           </article>)}
         </div>
         {publications.filter((paper) => paper.status === 'In preparation' && !paper.project).map((paper) => <div class="independent-work">
@@ -212,12 +222,18 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .project-collaboration { margin:11px 0 8px; color:#596a5e; font-size:10px; line-height:1.5; }
     .project-collaboration span,.research-work-collaboration span { margin-right:7px; color:#718075; font-size:9px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; }
     .research-project-status { color:#79807b; font-size:10px; }
-    .research-work { margin-top:15px; padding:12px; border-left:2px solid #bdcbbf; background:#f5f7f4; }
-    .research-work-label { margin:0 0 5px; }
-    .research-work-title { margin:0 0 5px; color:#39443c; font-size:11px; font-weight:600; line-height:1.5; }
-    .research-work-role { margin:0 0 6px; color:#626964; font-size:11px; line-height:1.6; }
-    .research-work-collaboration { margin:0 0 6px; color:#596a5e; font-size:10px; }
-    .research-work-status { display:block; color:#718075; font-size:9px; }
+    .research-publication { display:grid; grid-template-columns:150px minmax(0,1fr); align-items:start; gap:15px; margin-top:15px; padding:13px 0 0; border-top:1px solid #e8ece8; }
+    .research-publication-visual { min-width:0; }
+    .research-publication-visual img { display:block; width:100%; height:88px; object-fit:contain; border:1px solid #e5e9e5; background:#f7f8f5; }
+    .research-publication-copy { min-width:0; }
+    .research-work-label { margin:0 0 5px; color:#718075; font-size:9px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
+    .research-work-title { margin:0 0 4px; color:#39443c; font-size:12px; font-weight:600; line-height:1.5; }
+    .research-work-authors { margin:0; color:#707772; font-size:10px; line-height:1.55; }
+    .research-work-role { margin:6px 0; color:#626964; font-size:10px; line-height:1.6; }
+    .research-work-collaboration { margin:0 0 5px; color:#596a5e; font-size:10px; }
+    .research-work-venue { margin:0; color:#526b58; font-size:10px; line-height:1.5; }
+    .research-publication .paper-links { gap:12px; }
+    .research-publication .paper-link { margin-top:5px; font-size:9px; }
     .independent-work { margin-top:18px; padding:12px 14px; border:1px solid #edf0ed; }
     .independent-work-status { color:#718075; font-size:9px; letter-spacing:.06em; text-transform:uppercase; }
     .independent-work-title { margin:5px 0 0; color:#39443c; font-size:11px; font-weight:600; line-height:1.5; }
@@ -287,6 +303,8 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
       .site-header nav { gap:12px; }
       .site-header nav a { font-size:10px; }
       .research-list { grid-template-columns:1fr; }
+      .research-publication { grid-template-columns:105px minmax(0,1fr); gap:11px; }
+      .research-publication-visual img { height:72px; }
       .service-grid { grid-template-columns:1fr; gap:20px; }
       .publication-item { grid-template-columns:112px minmax(0,1fr); gap:12px; }
       .publication-figure img { height:76px; }
