@@ -5,30 +5,29 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
 ---
 <BaseLayout title="Yi-Jyun Sun | Research Portfolio" description="Research portfolio of Yi-Jyun (Jenny) Sun, M.S. thesis student in Computer Science at UIUC.">
   <div class="site-shell">
-    <aside class="profile-sidebar" aria-label="Personal links">
-      <nav class="profile-links" aria-label="Personal and research links">
+    <aside class="profile-sidebar" aria-label="Profile">
+      <img class="sidebar-photo" src="/images/jenny-headshot.jpg" alt="Portrait of Yi-Jyun (Jenny) Sun" fetchpriority="high" />
+      <h1 class="sidebar-name" id="intro-heading">Yi-Jyun (Jenny) Sun</h1>
+      <p class="sidebar-role">M.S. student · Computer Science</p>
+      <p class="sidebar-affiliation"><a class="affiliation-link" href="https://uiuc-conversational-ai-lab.github.io" target="_blank" rel="noreferrer">ConvAI Lab</a> · UIUC</p>
+      <nav class="profile-links" aria-label="Personal links">
         <a class="profile-link" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
         </a>
-        <a class="profile-link" href="https://scholar.google.com/scholar?q=%22Yi-Jyun+Sun%22+UIUC" target="_blank" rel="noreferrer" aria-label="Search Google Scholar for Yi-Jyun Sun" title="Google Scholar search">
+        <a class="profile-link" href={profile.scholar} target="_blank" rel="noreferrer" aria-label="Google Scholar" title="Google Scholar">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3Zm-6 9.27v4.2c0 2.5 2.69 4.53 6 4.53s6-2.03 6-4.53v-4.2l-6 3.27-6-3.27Z"/></svg>
         </a>
         <a class="profile-link" href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.68-3.75-1.32-3.75-1.32-.5-1.29-1.23-1.63-1.23-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.26 1.42 2.97 1.08.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.77 1.15 2.99 0 4.29-2.61 5.24-5.1 5.52.4.35.75 1.03.75 2.08v3.09c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
-        </a>
-        <a class="profile-link" href="https://uiuc-conversational-ai-lab.github.io" target="_blank" rel="noreferrer" aria-label="ConvAI Lab" title="ConvAI Lab">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a4 4 0 0 0-3.87 3H6a3 3 0 0 0 0 6h2.13A4 4 0 0 0 11 13.87V16H8a3 3 0 1 0 0 2h5v-4.13A4 4 0 0 0 15.87 11H18a3 3 0 1 0 0-2h-2.13A4 4 0 0 0 13 5.13V5a1 1 0 0 0-1-1h-.13A4 4 0 0 0 12 2Zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM6 7h2.13a3.98 3.98 0 0 0 0 2H6a1 1 0 1 1 0-2Zm12 0a1 1 0 1 1 0 2h-2.13a3.98 3.98 0 0 0 0-2H18ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.68-3.75-1.32-3.75-1.32-.5-1.29-1.23-1.63-1.23-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.26 1.42 2.97 1.08.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.11 2.96.72.78.26 1.42 2.97 1.08.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.11 2.96.72.78.26 1.42 2.97 1.08.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.11 2.96.72.78.26 1.42 2.97 1.08.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.11 2.96.72.78.26 1.42 2.97 1.08.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.11 2.96-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.11 2.96C18.32 8.29 19.8 9.92 19.8 12.77c0 4.21-2.58 5.14-5.04 5.42.4.35.76 1.03.76 2.08v2.72c0 .3.21.64.77.53A11.1 11.1 0 0 0 12 .9Z"/></svg>
         </a>
       </nav>
     </aside>
     <div class="page-content">
       <section class="profile-intro" id="top" aria-labelledby="intro-heading">
         <div class="profile-intro-copy">
-          <h1 id="intro-heading">Yi-Jyun (Jenny) Sun</h1>
-          <p class="lede">I’m an M.S. student in Computer Science at the University of Illinois Urbana-Champaign, working with the <a class="affiliation-link" href="https://uiuc-conversational-ai-lab.github.io" target="_blank" rel="noreferrer">ConvAI Lab</a>. Advised by Professor <a class="affiliation-link" href="https://siebelschool.illinois.edu/about/people/faculty/dilek" target="_blank" rel="noreferrer">Dilek Hakkani-Tür</a> and <a class="affiliation-link" href="https://siebelschool.illinois.edu/about/people/faculty/gokhan" target="_blank" rel="noreferrer">Gökhan Tür</a>, my research focuses on applied AI, especially for healthcare and education. I’m interested in how agentic AI systems can support people through complex, real-world workflows and improve human well-being.</p>
+          <p class="lede">Advised by Professor <a class="affiliation-link" href="https://siebelschool.illinois.edu/about/people/faculty/dilek" target="_blank" rel="noreferrer">Dilek Hakkani-Tür</a> and <a class="affiliation-link" href="https://siebelschool.illinois.edu/about/people/faculty/gokhan" target="_blank" rel="noreferrer">Gökhan Tür</a>, I focus on applied AI for healthcare and education. I’m especially interested in how agentic AI systems can support people through complex, real-world workflows and improve human well-being.</p>
           <p class="contact-line">{profile.location}</p>
         </div>
-        <img class="profile-photo" src="/images/jenny-headshot.jpg" alt="Portrait of Yi-Jyun (Jenny) Sun" fetchpriority="high" />
       </section>
 
       <header class="site-header">
@@ -151,18 +150,20 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     body { margin:0; }
     a { color:#426a56; text-underline-offset:3px; }
     a:hover { color:#254733; }
-    .site-shell { width:min(100% - 64px, 1100px); margin:0 auto; display:grid; grid-template-columns:44px minmax(0,1fr); align-items:start; gap:38px; }
-    .profile-sidebar { position:sticky; top:32px; padding:34px 0 24px; }
-    .profile-links { display:grid; justify-items:center; gap:12px; }
-    .profile-link { display:grid; width:38px; height:38px; place-items:center; border:1px solid #e4e9e5; border-radius:50%; color:#53695a; background:#fff; transition:color .18s ease, border-color .18s ease, background .18s ease; }
+    .site-shell { width:min(100% - 64px, 1100px); margin:0 auto; display:grid; grid-template-columns:210px minmax(0,1fr); align-items:start; gap:48px; }
+    .profile-sidebar { position:sticky; top:28px; padding:38px 0 24px; }
+    .sidebar-photo { display:block; width:min(100%,178px); aspect-ratio:4 / 5; margin:0 0 15px; object-fit:cover; object-position:center 35%; border-radius:3px; }
+    .sidebar-name { margin:0 0 7px; font-family:'Newsreader',Georgia,serif; font-size:25px; font-weight:500; letter-spacing:-.025em; line-height:1.12; }
+    .sidebar-role,.sidebar-affiliation { margin:0 0 5px; color:#626964; font-size:12px; line-height:1.55; }
+    .sidebar-affiliation { margin-bottom:0; }
+    .profile-links { display:flex; align-items:center; justify-content:flex-start; gap:9px; padding-top:14px; }
+    .profile-link { display:grid; width:34px; height:34px; place-items:center; border:1px solid #e4e9e5; border-radius:50%; color:#53695a; background:#fff; transition:color .18s ease, border-color .18s ease, background .18s ease; }
     .profile-link:hover { color:#254733; border-color:#bdcbbf; background:#f5f8f4; }
     .profile-link:focus-visible { outline:2px solid #426a56; outline-offset:3px; }
-    .profile-link svg { display:block; width:17px; height:17px; fill:currentColor; }
-    .profile-intro { display:grid; grid-template-columns:minmax(0,1fr) 152px; align-items:center; gap:34px; padding:38px 0 36px; }
-    .profile-photo { display:block; width:152px; aspect-ratio:4 / 5; object-fit:cover; object-position:center 35%; border-radius:3px; }
+    .profile-link svg { display:block; width:16px; height:16px; fill:currentColor; }
+    .profile-intro { padding:48px 0 36px; }
     .profile-intro-copy { min-width:0; }
-    .profile-intro h1 { margin-bottom:14px; font-family:'Newsreader',Georgia,serif; font-size:46px; font-weight:400; letter-spacing:-.035em; line-height:1.05; }
-    .profile-intro .lede { margin:0; color:#4e5550; font-size:15px; line-height:1.72; }
+    .profile-intro .lede { max-width:680px; margin:0; color:#4e5550; font-size:16px; line-height:1.75; }
     .profile-intro .lede a { color:#426a56; font-weight:600; text-decoration:underline; text-decoration-color:#9eb4a2; text-decoration-thickness:1px; text-underline-offset:3px; }
     .profile-intro .lede a:hover { color:#254733; text-decoration-color:currentColor; }
     .profile-intro .lede a:focus-visible { outline:2px solid #426a56; outline-offset:3px; border-radius:1px; }
@@ -239,16 +240,16 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     footer { display:flex; justify-content:space-between; padding:20px 0 30px; border-top:1px solid #e9ece9; color:#89908b; font-size:10px; }
     footer a { text-decoration:none; }
     @media (min-width:481px) and (max-width:760px) {
-      .site-shell { width:min(100% - 36px, 1100px); grid-template-columns:38px minmax(0,1fr); gap:20px; }
-      .profile-sidebar { top:20px; padding-top:24px; }
-      .profile-links { gap:9px; }
-      .profile-link { width:34px; height:34px; }
-      .profile-link svg { width:16px; height:16px; }
-      .profile-intro { grid-template-columns:minmax(0,1fr) 108px; gap:17px; padding:30px 0 28px; }
-      .profile-photo { width:108px; }
-      .profile-intro h1 { margin-bottom:11px; font-size:36px; }
-      .profile-intro .eyebrow { font-size:9px; letter-spacing:.055em; }
-      .profile-intro .lede { font-size:12px; line-height:1.6; }
+      .site-shell { width:min(100% - 36px, 1100px); grid-template-columns:150px minmax(0,1fr); gap:25px; }
+      .profile-sidebar { top:20px; padding-top:27px; }
+      .sidebar-photo { width:140px; margin-bottom:12px; }
+      .sidebar-name { font-size:21px; }
+      .sidebar-role,.sidebar-affiliation { font-size:10px; }
+      .profile-links { gap:7px; padding-top:11px; }
+      .profile-link { width:31px; height:31px; }
+      .profile-link svg { width:15px; height:15px; }
+      .profile-intro { padding:35px 0 28px; }
+      .profile-intro .lede { font-size:13px; line-height:1.65; }
       .contact-line { font-size:10px; }
       .site-header nav { gap:12px; }
       .site-header nav a { font-size:10px; }
@@ -263,15 +264,16 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     }
     @media (max-width:480px) {
       .site-shell { width:min(100% - 36px, 800px); display:block; }
-      .profile-sidebar { position:relative; top:auto; display:flex; justify-content:flex-end; padding:10px 0 3px; }
-      .profile-links { display:flex; gap:8px; }
-      .profile-link { width:34px; height:34px; }
+      .profile-sidebar { position:relative; top:auto; display:grid; grid-template-columns:88px minmax(0,1fr); grid-template-areas:"photo name" "photo role" "photo lab" "links links"; align-items:center; gap:3px 14px; padding:20px 0 10px; }
+      .sidebar-photo { grid-area:photo; width:88px; margin:0; }
+      .sidebar-name { grid-area:name; align-self:end; margin:0; font-size:22px; }
+      .sidebar-role { grid-area:role; align-self:center; margin:0; font-size:11px; }
+      .sidebar-affiliation { grid-area:lab; align-self:start; margin:0; font-size:11px; }
+      .profile-links { grid-area:links; gap:8px; padding-top:11px; }
+      .profile-link { width:33px; height:33px; }
       .page-content { width:100%; }
-      .profile-intro { grid-template-columns:minmax(0,1fr) 82px; gap:13px; padding:24px 0 26px; }
-      .profile-photo { width:82px; }
-      .profile-intro h1 { margin-bottom:9px; font-size:34px; }
-      .profile-intro .eyebrow { margin-bottom:7px; font-size:8px; letter-spacing:.04em; }
-      .profile-intro .lede { font-size:12px; line-height:1.55; }
+      .profile-intro { padding:19px 0 25px; }
+      .profile-intro .lede { font-size:13px; line-height:1.65; }
       .contact-line { font-size:10px; }
       .site-header { align-items:flex-start; flex-direction:column; gap:12px; padding:14px 0; }
       .site-header nav { justify-content:flex-start; gap:12px 17px; }
