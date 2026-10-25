@@ -230,6 +230,24 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .cv-copy { margin:0; color:#626964; font-size:13px; line-height:1.7; }
     footer { display:flex; justify-content:space-between; padding:20px 0 30px; border-top:1px solid #e9ece9; color:#89908b; font-size:10px; }
     footer a { text-decoration:none; }
+    @media (min-width:521px) and (max-width:760px) {
+      .site-shell { width:min(100% - 36px, 1100px); grid-template-columns:162px minmax(0,1fr); gap:24px; }
+      .profile-sidebar { top:20px; padding:34px 0 24px; }
+      .profile-photo { width:108px; margin-bottom:16px; }
+      .profile-sidebar-copy .eyebrow { font-size:9px; letter-spacing:.055em; }
+      .profile-sidebar-copy h1 { margin-bottom:10px; font-size:34px; }
+      .profile-sidebar-copy .lede { margin-bottom:12px; font-size:12px; line-height:1.58; }
+      .contact-line { font-size:10px; line-height:1.6; }
+      .contact-line span { padding:0 3px; }
+      .site-header nav { gap:12px; }
+      .site-header nav a { font-size:10px; }
+      .research-list { grid-template-columns:1fr; }
+      .publication-item { grid-template-columns:112px minmax(0,1fr); gap:12px; }
+      .publication-figure img { height:76px; }
+      .basketball-note { grid-template-columns:1fr; gap:18px; padding:19px; }
+      .basketball-photo { width:min(100%,320px); }
+      .basketball-us { padding:19px; }
+    }
     @media (max-width:620px) {
       .site-shell { width:min(100% - 36px, 800px); display:block; }
       .profile-sidebar { position:relative; top:auto; display:grid; grid-template-columns:100px minmax(0,1fr); align-items:start; gap:0 17px; padding:28px 0 25px; }
