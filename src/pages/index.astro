@@ -5,26 +5,23 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
 ---
 <BaseLayout title="Yi-Jyun Sun | Research Portfolio" description="Research portfolio of Yi-Jyun (Jenny) Sun, computer science graduate student at UIUC.">
   <div class="site-shell">
-    <header class="site-header">
-      <a class="wordmark" href="#top">Yi-Jyun Sun</a>
-      <nav aria-label="Main navigation">
-        <a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#outside">Outside the lab</a>
-      </nav>
-    </header>
+    <aside class="profile-sidebar" id="top">
+      <img class="profile-photo" src="/images/jenny-headshot.jpg" alt="Yi-Jyun (Jenny) Sun" fetchpriority="high" />
+      <div class="profile-sidebar-copy">
+        <p class="eyebrow">M.S. student · Computer Science · UIUC</p>
+        <h1>Hi, I’m Jenny.</h1>
+        <p class="lede">I’m Yi-Jyun Sun, a graduate student at the University of Illinois Urbana-Champaign. I study how language technologies can help people work with complex information, especially in healthcare, education, and conversational AI.</p>
+        <p class="contact-line">Illinois, United States <span>·</span> <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a> <span>·</span> <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a></p>
+      </div>
+    </aside>
+    <div class="page-content">
+      <header class="site-header">
+        <nav aria-label="Main navigation">
+          <a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#outside">Outside the lab</a>
+        </nav>
+      </header>
 
-    <main id="top">
-      <section class="intro" id="about">
-        <div class="intro-layout">
-          <div class="intro-copy">
-            <p class="eyebrow">M.S. student · Computer Science · UIUC</p>
-            <h1>Hi, I’m Jenny.</h1>
-            <p class="lede">I’m Yi-Jyun Sun, a graduate student at the University of Illinois Urbana-Champaign. I study how language technologies can help people work with complex information, especially in healthcare, education, and conversational AI.</p>
-            <p class="contact-line">Illinois, United States <span>·</span> <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a> <span>·</span> <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a></p>
-          </div>
-          <img class="profile-photo" src="/images/jenny-headshot.jpg" alt="Yi-Jyun (Jenny) Sun" fetchpriority="high" />
-        </div>
-      </section>
-
+    <main>
       <section class="content-section" id="research">
         <div class="section-heading"><p class="eyebrow">What I work on</p><h2>Selected research</h2></div>
         <div class="research-list">
@@ -113,21 +110,25 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     </main>
 
     <footer><span>© {new Date().getFullYear()} Yi-Jyun Sun</span><a href="#top">Back to top ↑</a></footer>
+    </div>
   </div>
   <style is:global>
     :root { background:#fff; color:#202321; font-family:'DM Sans',Arial,sans-serif; }
     body { margin:0; }
     a { color:#426a56; text-underline-offset:3px; }
     a:hover { color:#254733; }
-    .site-shell { width:min(100% - 48px, 800px); margin:0 auto; }
+    .site-shell { width:min(100% - 64px, 1100px); margin:0 auto; display:grid; grid-template-columns:250px minmax(0,1fr); align-items:start; gap:54px; }
+    .profile-sidebar { position:sticky; top:32px; padding:54px 0 30px; }
+    .profile-photo { display:block; width:148px; aspect-ratio:4 / 5; margin:0 0 23px; object-fit:cover; object-position:center 35%; border-radius:3px; }
+    .profile-sidebar-copy h1 { margin-bottom:16px; font-family:'Newsreader',Georgia,serif; font-size:42px; font-weight:400; letter-spacing:-.035em; line-height:1.05; }
+    .profile-sidebar-copy .lede { margin-bottom:18px; color:#4e5550; font-size:14px; line-height:1.7; }
+    .page-content { min-width:0; }
+    .site-header { position:sticky; top:0; z-index:5; min-height:72px; background:rgba(255,255,255,.96); backdrop-filter:blur(8px); }
     .site-header { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid #e9ece9; }
     .wordmark { color:#202321; font-size:14px; font-weight:600; text-decoration:none; white-space:nowrap; }
     .site-header nav { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:20px; }
     .site-header nav a { color:#606762; font-size:12px; text-decoration:none; }
     .site-header nav a:hover { color:#254733; }
-    .intro { padding:76px 0 58px; }
-    .intro-layout { display:grid; grid-template-columns:minmax(0,1fr) 174px; align-items:center; gap:32px; }
-    .profile-photo { display:block; width:174px; aspect-ratio:4 / 5; object-fit:cover; object-position:center 35%; border-radius:3px; }
     .eyebrow { margin:0 0 10px; color:#68816e; font-size:11px; letter-spacing:.075em; text-transform:uppercase; }
     h1,h2,h3,p { margin-top:0; }
     h1 { margin-bottom:20px; font-family:'Newsreader',Georgia,serif; font-size:54px; font-weight:400; letter-spacing:-.035em; }
@@ -187,14 +188,19 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     footer { display:flex; justify-content:space-between; padding:20px 0 30px; border-top:1px solid #e9ece9; color:#89908b; font-size:10px; }
     footer a { text-decoration:none; }
     @media (max-width:620px) {
-      .site-shell { width:min(100% - 36px, 800px); }
+      .site-shell { width:min(100% - 36px, 800px); display:block; }
+      .profile-sidebar { position:relative; top:auto; display:grid; grid-template-columns:100px minmax(0,1fr); align-items:start; gap:0 17px; padding:28px 0 25px; }
+      .profile-photo { grid-column:1; grid-row:1; width:100px; margin:0; }
+      .profile-sidebar-copy { grid-column:2; grid-row:1; }
+      .profile-sidebar-copy .eyebrow { font-size:9px; letter-spacing:.055em; }
+      .profile-sidebar-copy h1 { margin-bottom:9px; font-size:34px; }
+      .profile-sidebar-copy .lede { margin-bottom:10px; font-size:12px; line-height:1.55; }
+      .contact-line { font-size:10px; }
+      .contact-line span { padding:0 3px; }
+      .page-content { width:100%; }
       .site-header { align-items:flex-start; flex-direction:column; gap:12px; padding:17px 0; }
       .site-header nav { justify-content:flex-start; gap:12px 17px; }
       .site-header nav a { font-size:11px; }
-      .intro { padding:52px 0 42px; }
-      .intro-layout { grid-template-columns:1fr; gap:0; }
-      .profile-photo { grid-row:1; width:138px; margin:0 0 20px; }
-      .intro-copy { grid-row:2; }
       h1 { font-size:46px; }
       .lede { font-size:15px; }
       .research-list { grid-template-columns:1fr; }
