@@ -171,34 +171,34 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
   <style is:global>
     :root { background:#fff; color:#202321; font-family:'DM Sans',Arial,sans-serif; }
     body { margin:0; }
-    a { color:#426a56; text-underline-offset:3px; }
-    a:hover { color:#254733; }
+    a { color:#b84f34; text-underline-offset:3px; }
+    a:hover { color:#873a28; }
     .site-shell { width:min(100% - 64px, 1100px); margin:0 auto; display:grid; grid-template-columns:210px minmax(0,1fr); align-items:start; gap:48px; }
     .profile-sidebar { position:sticky; top:28px; padding:38px 0 24px; }
-    .sidebar-photo { display:block; width:min(100%,178px); aspect-ratio:4 / 5; margin:0 0 15px; object-fit:cover; object-position:center 35%; border-radius:3px; }
+    .sidebar-photo { display:block; width:min(100%,178px); aspect-ratio:1; margin:0 0 17px; object-fit:cover; object-position:center 38%; border:3px solid #fff; border-radius:50%; box-shadow:0 0 0 2px #e9a17d; }
     .sidebar-name { margin:0 0 7px; font-family:'Newsreader',Georgia,serif; font-size:25px; font-weight:500; letter-spacing:-.025em; line-height:1.12; }
     .sidebar-role,.sidebar-affiliation { margin:0 0 5px; color:#626964; font-size:12px; line-height:1.55; }
     .sidebar-affiliation { margin-bottom:0; }
     .profile-links { display:flex; align-items:center; justify-content:flex-start; gap:9px; padding-top:14px; }
-    .profile-link { display:grid; width:34px; height:34px; place-items:center; border:1px solid #e4e9e5; border-radius:50%; color:#53695a; background:#fff; transition:color .18s ease, border-color .18s ease, background .18s ease; }
-    .profile-link:hover { color:#254733; border-color:#bdcbbf; background:#f5f8f4; }
-    .profile-link:focus-visible { outline:2px solid #426a56; outline-offset:3px; }
+    .profile-link { display:grid; width:34px; height:34px; place-items:center; border:1px solid #f0d9cc; border-radius:50%; color:#b84f34; background:#fffaf6; transition:color .18s ease, border-color .18s ease, background .18s ease; }
+    .profile-link:hover { color:#873a28; border-color:#e9aa8d; background:#fff0e6; }
+    .profile-link:focus-visible { outline:2px solid #c45b3d; outline-offset:3px; }
     .profile-link svg { display:block; width:16px; height:16px; fill:currentColor; }
     .cv-icon-label { font-size:10px; font-weight:700; letter-spacing:-.03em; }
     .profile-intro { padding:48px 0 36px; }
     .profile-intro-copy { min-width:0; }
     .profile-intro .lede { max-width:680px; margin:0; color:#4e5550; font-size:16px; line-height:1.75; }
-    .profile-intro .lede a { color:#426a56; font-weight:600; text-decoration:underline; text-decoration-color:#9eb4a2; text-decoration-thickness:1px; text-underline-offset:3px; }
-    .profile-intro .lede a:hover { color:#254733; text-decoration-color:currentColor; }
-    .profile-intro .lede a:focus-visible { outline:2px solid #426a56; outline-offset:3px; border-radius:1px; }
+    .profile-intro .lede a { color:#a94730; font-weight:600; text-decoration:underline; text-decoration-color:#e2a78e; text-decoration-thickness:1px; text-underline-offset:3px; }
+    .profile-intro .lede a:hover { color:#873a28; text-decoration-color:currentColor; }
+    .profile-intro .lede a:focus-visible { outline:2px solid #c45b3d; outline-offset:3px; border-radius:1px; }
     .page-content { min-width:0; }
     .site-header { position:sticky; top:0; z-index:5; min-height:72px; background:rgba(255,255,255,.96); backdrop-filter:blur(8px); }
     .site-header { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid #e9ece9; }
     .wordmark { color:#202321; font-size:14px; font-weight:600; text-decoration:none; white-space:nowrap; }
     .site-header nav { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:20px; }
     .site-header nav a { color:#606762; font-size:12px; text-decoration:none; }
-    .site-header nav a:hover { color:#254733; }
-    .eyebrow { margin:0 0 10px; color:#68816e; font-size:11px; letter-spacing:.075em; text-transform:uppercase; }
+    .site-header nav a:hover { color:#a94730; }
+    .eyebrow { margin:0 0 10px; color:#b85b3b; font-size:11px; font-weight:600; letter-spacing:.075em; text-transform:uppercase; }
     h1,h2,h3,p { margin-top:0; }
     h1 { margin-bottom:20px; font-family:'Newsreader',Georgia,serif; font-size:54px; font-weight:400; letter-spacing:-.035em; }
     .lede { max-width:660px; margin-bottom:22px; color:#4e5550; font-size:17px; line-height:1.75; }
@@ -212,14 +212,14 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     h3 { margin-bottom:4px; font-size:15px; font-weight:600; }
     .research-list { display:grid; grid-template-columns:1fr; gap:16px; }
     .research-item { padding:17px; }
-    .project-card { border:1px solid #e6ebe7; border-radius:3px; background:#fcfdfb; }
+    .project-card { border:1px solid #f0d9cc; border-left:3px solid #e99a73; border-radius:3px; background:#fffaf6; }
     .item-title { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:4px 12px; }
     .item-title span { color:#79807b; font-size:10px; }
     .project-vision-label,.research-work-label { margin:14px 0 4px; color:#718075; font-size:9px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
     .project-vision { margin:0 0 8px; color:#626964; font-size:12px; line-height:1.65; }
     .project-website { margin:0 0 9px; font-size:10px; }
-    .project-website a { color:#426a56; text-decoration:underline; text-decoration-color:#b6c5b8; text-underline-offset:3px; }
-    .project-website a:hover { color:#254733; text-decoration-color:currentColor; }
+    .project-website a { color:#a94730; text-decoration:underline; text-decoration-color:#e2a78e; text-underline-offset:3px; }
+    .project-website a:hover { color:#873a28; text-decoration-color:currentColor; }
     .project-collaboration { margin:11px 0 8px; color:#596a5e; font-size:10px; line-height:1.5; }
     .project-collaboration span,.research-work-collaboration span { margin-right:7px; color:#718075; font-size:9px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; }
     .research-project-status { color:#79807b; font-size:10px; }
@@ -244,11 +244,11 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .paper-title { max-width:650px; margin:0 0 4px; font-size:13px; font-weight:600; line-height:1.55; }
     .paper-authors,.paper-venue { margin:0; color:#707772; font-size:11px; line-height:1.6; }
     .author-self { color:#2e4937; font-weight:700; }
-    .paper-venue { margin-top:2px; color:#526b58; }
+    .paper-venue { margin-top:2px; color:#a95637; }
     .publication-aside { min-width:0; }
     .publication-figure { margin:0; }
     .publication-figure img { display:block; width:100%; height:112px; object-fit:contain; object-position:center; border:1px solid #e5e9e5; background:#f7f8f5; }
-    .paper-link { display:inline-block; margin-top:7px; font-size:10px; text-decoration:none; }
+    .paper-link { display:inline-block; margin-top:7px; color:#a94730; font-size:10px; text-decoration:none; }
     .paper-links { display:flex; gap:14px; }
     .all-papers-link { display:inline-block; margin-top:17px; font-size:11px; text-decoration:none; }
     .all-papers-link span { margin-left:3px; }
@@ -256,7 +256,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .status.published { color:#547259; }
     .service-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:34px; }
     .service-group { padding-top:14px; border-top:1px solid #edf0ed; }
-    .service-group h3 { margin-bottom:10px; color:#526b58; font-size:12px; }
+    .service-group h3 { margin-bottom:10px; color:#a95637; font-size:12px; }
     .service-group ul { display:grid; gap:9px; margin:0; padding:0; list-style:none; }
     .service-group li { display:grid; grid-template-columns:74px minmax(0,1fr); gap:10px; color:#626964; font-size:12px; line-height:1.55; }
     .service-year { color:#7c837e; font-size:10px; white-space:nowrap; }
@@ -270,7 +270,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .detail { max-width:600px; margin:0; color:#666d68; font-size:12px; line-height:1.65; }
     .dates { margin:2px 0 0; color:#7c837e; font-size:10px; white-space:nowrap; }
     .outside-motto { margin:-8px 0 24px; color:#626964; font-size:14px; line-height:1.6; }
-    .outside-motto strong { color:#355541; font-family:'Newsreader',Georgia,serif; font-size:21px; font-weight:500; }
+    .outside-motto strong { color:#c05235; font-family:'Newsreader',Georgia,serif; font-size:21px; font-weight:500; }
     .basketball-stories { display:grid; gap:16px; }
     .basketball-note { display:grid; grid-template-columns:235px 1fr; gap:27px; align-items:center; padding:22px; background:#f7f8f5; }
     .basketball-photo { display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; object-position:center; }
