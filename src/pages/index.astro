@@ -55,6 +55,10 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
             </div>}
           </article>)}
         </div>
+        {publications.filter((paper) => paper.status === 'In preparation' && !paper.project).map((paper) => <div class="independent-work">
+          <span class="independent-work-status">In preparation</span>
+          <p class="independent-work-title">{paper.title}</p>
+        </div>)}
       </section>
 
       <section class="content-section" id="publications">
@@ -200,6 +204,9 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .research-works { display:grid; gap:9px; margin-top:12px; padding-top:10px; border-top:1px solid #edf0ed; }
     .research-work-title { margin:0 !important; color:#39443c !important; font-size:11px !important; font-weight:600; line-height:1.5 !important; }
     .research-work-status { display:block; margin-top:3px; color:#718075 !important; font-size:9px !important; }
+    .independent-work { margin-top:18px; padding:12px 14px; border:1px solid #edf0ed; }
+    .independent-work-status { color:#718075; font-size:9px; letter-spacing:.06em; text-transform:uppercase; }
+    .independent-work-title { margin:5px 0 0; color:#39443c; font-size:11px; font-weight:600; line-height:1.5; }
     .publication-list { margin:0; padding:0; list-style:none; }
     .publication-item { display:grid; grid-template-columns:205px minmax(0,1fr); align-items:start; gap:20px; padding:17px 0; border-top:1px solid #edf0ed; }
     .publication-copy { min-width:0; }
