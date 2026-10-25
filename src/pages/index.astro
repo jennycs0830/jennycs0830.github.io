@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { profile, research, publications, experience, education } from '../data/site.js';
+const selectedPublications = publications.filter((paper) => paper.status === 'Published');
 ---
 <BaseLayout title="Yi-Jyun Sun | Research Portfolio" description="Research portfolio of Yi-Jyun (Jenny) Sun, computer science graduate student at UIUC.">
   <div class="site-shell">
@@ -31,9 +32,9 @@ import { profile, research, publications, experience, education } from '../data/
       </section>
 
       <section class="content-section" id="publications">
-        <div class="section-heading"><p class="eyebrow">Papers & writing</p><h2>Publications</h2></div>
+        <div class="section-heading"><p class="eyebrow">Papers & writing</p><h2>Selected publications</h2></div>
         <ol class="publication-list">
-          {publications.map((paper) => <li class:list={['publication-item', paper.visual && 'has-visual']}>
+          {selectedPublications.map((paper) => <li class:list={['publication-item', paper.visual && 'has-visual']}>
             <div class="publication-aside">
               {paper.visual && <figure class="publication-figure"><img src={paper.visual} alt={paper.visualAlt} loading="lazy" /></figure>}
             </div>
@@ -49,6 +50,7 @@ import { profile, research, publications, experience, education } from '../data/
             </div>
           </li>)}
         </ol>
+        <a class="all-papers-link" href="/publications/">All papers <span aria-hidden="true">↗</span></a>
       </section>
 
       <section class="content-section" id="experience">
@@ -128,6 +130,8 @@ import { profile, research, publications, experience, education } from '../data/
     .publication-figure img { display:block; width:100%; height:112px; object-fit:contain; object-position:center; border:1px solid #e5e9e5; background:#f7f8f5; }
     .paper-link { display:inline-block; margin-top:7px; font-size:10px; text-decoration:none; }
     .paper-links { display:flex; gap:14px; }
+    .all-papers-link { display:inline-block; margin-top:17px; font-size:11px; text-decoration:none; }
+    .all-papers-link span { margin-left:3px; }
     .status { align-self:start; padding-top:2px; color:#a26b45; font-size:9px; letter-spacing:.04em; text-transform:uppercase; white-space:nowrap; }
     .status.published { color:#547259; }
     .experience-item,.education-list article { display:grid; grid-template-columns:1fr auto; gap:18px; padding:16px 0; border-top:1px solid #edf0ed; }

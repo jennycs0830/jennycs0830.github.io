@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { publications } from '../data/site.js';
+
+const order = { Published: 0, 'Under review': 1, 'In preparation': 2 };
+const allPapers = [...publications].sort((a, b) => order[a.status] - order[b.status]);
+const filters = [
+  { label: 'All', value: 'all' },
+  { label: 'Published', value: 'published' },
+  { label: 'Under review', value: 'under-review' },
+  { label: 'In preparation', value: 'in-preparation' },
+];
+---
+<BaseLayout title="Publications | Yi-Jyun Sun" description="Published papers and work in progress by Yi-Jyun (Jenny) Sun.">
+  <div class="papers-shell">
+    <header class="papers-header">
+      <a class="wordmark" href="/">Yi-Jyun Sun</a>
+      <nav aria-label="Page navigation"><a href="/#publications">Selected publications</a><a href="/#research">Research</a></nav>
+    </header>
+    <main>
+      <section class="papers-intro">
+        <p class="eyebrow">Papers & writing</p>
+        <h1>All papers</h1>
+        <p>Published work, current submissions, and work in preparation.</p>
+      </section>
+      <div class="paper-filters" role="group" aria-label="Filter papers by status">
+        {filters.map((filter, index) => <button type="button" class:list={['filter-button', index === 0 && 'active']} data-filter={filter.value} aria-pressed={index === 0 ? 'true' : 'false'}>{filter.label}</button>)}
+      </div>
+      <ol class="publication-list" id="paper-list">
+        {allPapers.map((paper) => <li class="publication-item" data-status={paper.status.toLowerCase().replaceAll(' ', '-') }>
+          <div class="publication-aside">
+            {paper.visual && <figure class="publication-figure"><img src={paper.visual} alt={paper.visualAlt} loading="lazy" /></figure>}
+          </div>
+          <div class="publication-copy">
+            <p class="paper-title">{paper.title}</p>
+            <p class="paper-authors">{paper.authors}</p>
+            <p class="paper-venue">{paper.venue}</p>
+            <div class="paper-links">
+              {paper.url && <a class="paper-link" href={paper.url} target="_blank" rel="noreferrer">Paper <span aria-hidden="true">↗</span></a>}
+              {paper.codeUrl && <a class="paper-link" href={paper.codeUrl} target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>}
+            </div>
+            <span class:list={['status', paper.status === 'Published' && 'published']}>{paper.status}</span>
+          </div>
+        </li>)}
+      </ol>
+    </main>
+    <footer><span>© {new Date().getFullYear()} Yi-Jyun Sun</span><a href="/">Back to home ↑</a></footer>
+  </div>
+  <script>
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-button');
+    const papers = document.querySelectorAll<HTMLElement>('#paper-list .publication-item');
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        buttons.forEach((item) => {
+          const active = item === button;
+          item.classList.toggle('active', active);
+          item.setAttribute('aria-pressed', String(active));
+        });
+        papers.forEach((paper) => {
+          paper.hidden = filter !== 'all' && paper.dataset.status !== filter;
+        });
+      });
+    });
+  </script>
+  <style is:global>
+    body { margin:0; background:#fff; color:#202321; }
+    a { color:#426a56; text-underline-offset:3px; }
+    a:hover { color:#254733; }
+    .papers-shell { width:min(100% - 48px, 800px); margin:0 auto; }
+    .papers-header { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid #e9ece9; }
+    .wordmark { color:#202321; font-size:14px; font-weight:600; text-decoration:none; }
+    .papers-header nav { display:flex; gap:20px; }
+    .papers-header nav a { color:#606762; font-size:12px; text-decoration:none; }
+    .papers-intro { padding:58px 0 31px; }
+    .eyebrow { margin:0 0 7px; color:#68816e; font-size:11px; letter-spacing:.075em; text-transform:uppercase; }
+    h1 { margin:0 0 12px; font-family:'Newsreader',Georgia,serif; font-size:43px; font-weight:400; letter-spacing:-.03em; }
+    .papers-intro > p:last-child { margin:0; color:#626964; font-size:13px; }
+    .paper-filters { display:flex; flex-wrap:wrap; gap:8px; padding-bottom:15px; }
+    .filter-button { border:1px solid #e1e6e1; border-radius:2px; padding:7px 11px; background:#fff; color:#59625c; font:inherit; font-size:10px; cursor:pointer; }
+    .filter-button:hover,.filter-button.active { border-color:#547259; background:#f2f5f1; color:#31523b; }
+    .publication-list { margin:0; padding:0; list-style:none; }
+    .publication-item { display:grid; grid-template-columns:205px minmax(0,1fr); align-items:start; gap:20px; padding:17px 0; border-top:1px solid #edf0ed; }
+    .publication-copy { min-width:0; }
+    .publication-aside { min-width:0; }
+    .publication-figure { margin:0; }
+    .publication-figure img { display:block; width:100%; height:112px; object-fit:contain; object-position:center; border:1px solid #e5e9e5; background:#f7f8f5; }
+    .paper-title { max-width:650px; margin:0 0 4px; font-size:13px; font-weight:600; line-height:1.55; }
+    .paper-authors,.paper-venue { margin:0; color:#707772; font-size:11px; line-height:1.6; }
+    .paper-venue { margin-top:2px; color:#526b58; }
+    .paper-links { display:flex; gap:14px; }
+    .paper-link { display:inline-block; margin-top:7px; font-size:10px; text-decoration:none; }
+    .status { display:block; margin-top:8px; color:#a26b45; font-size:9px; letter-spacing:.04em; text-transform:uppercase; }
+    .status.published { color:#547259; }
+    .publication-item[hidden] { display:none; }
+    footer { display:flex; justify-content:space-between; margin-top:27px; padding:20px 0 30px; border-top:1px solid #e9ece9; color:#89908b; font-size:10px; }
+    footer a { text-decoration:none; }
+    @media (max-width:620px) {
+      .papers-shell { width:min(100% - 36px, 800px); }
+      .papers-header { align-items:flex-start; flex-direction:column; gap:12px; padding:17px 0; }
+      .papers-header nav { gap:16px; }
+      .publication-item { grid-template-columns:112px minmax(0,1fr); gap:12px; }
+      .publication-figure img { height:76px; }
+      .papers-intro { padding-top:44px; }
+    }
+  </style>
+</BaseLayout>
