@@ -139,7 +139,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .experience-item { display:grid; grid-template-columns:66px minmax(0,1fr) auto; align-items:start; gap:13px; padding:16px 0; border-top:1px solid #edf0ed; }
     .education-list article { display:grid; grid-template-columns:1fr auto; align-items:start; gap:18px; padding:16px 0; border-top:1px solid #edf0ed; }
     .company-logo { display:grid; width:66px; height:38px; place-items:center; }
-    .company-logo img { display:block; max-width:100%; max-height:100%; object-fit:contain; }
+    .company-logo img { display:block; width:auto; height:38px; max-width:66px; object-fit:contain; }
     .org { margin:0 0 6px; color:#566e5c; font-size:12px; }
     .detail { max-width:600px; margin:0; color:#666d68; font-size:12px; line-height:1.65; }
     .dates { margin:2px 0 0; color:#7c837e; font-size:10px; white-space:nowrap; }
@@ -165,6 +165,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
       .publication-figure img { height:76px; }
       .experience-item { grid-template-columns:50px minmax(0,1fr); gap:8px 11px; }
       .company-logo { width:46px; }
+      .company-logo img { max-width:46px; }
       .experience-item .dates { grid-column:2; grid-row:1; margin-top:0; }
       .experience-item > div { grid-column:2; }
       .experience-item > .company-logo { grid-column:1; grid-row:1 / span 2; }
