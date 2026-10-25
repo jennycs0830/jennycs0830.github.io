@@ -208,17 +208,11 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .basketball-us { display:grid; grid-template-columns:minmax(0,1fr); gap:17px; padding:22px; background:#f7f8f5; }
     .basketball-us-copy h3 { margin-bottom:7px; }
     .basketball-us-copy .eyebrow { margin-bottom:7px; }
-    .championship-carousel { width:100%; }
-    .carousel-frame { position:relative; display:grid; min-height:250px; place-items:center; overflow:hidden; background:#ecefeb; }
-    .championship-photo { display:block; width:100%; height:clamp(250px,42vw,420px); object-fit:contain; }
-    .carousel-control { position:absolute; top:50%; display:grid; width:42px; height:42px; place-items:center; transform:translateY(-50%); border:0; border-radius:50%; color:#fff; background:rgba(23,46,80,.78); font-size:29px; line-height:1; cursor:pointer; }
-    .carousel-control:hover { background:#172e50; }
-    .carousel-control:focus-visible,.carousel-text-control:focus-visible { outline:2px solid #426a56; outline-offset:3px; }
-    .carousel-control.previous { left:12px; }
-    .carousel-control.next { right:12px; }
-    .carousel-footer { display:flex; align-items:center; justify-content:center; gap:20px; padding-top:11px; color:#707772; font-size:11px; }
-    .carousel-text-control { padding:5px 8px; border:0; color:#426a56; background:transparent; font:inherit; cursor:pointer; }
-    .carousel-text-control:hover { color:#254733; }
+    .championship-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; width:min(100%,520px); }
+    .championship-gallery img { display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:2px; background:#ecefeb; }
+    .championship-gallery img:first-child { object-position:center 76%; }
+    .championship-gallery img:nth-child(2) { object-position:center 57%; }
+    .championship-gallery img:nth-child(3) { object-position:center 55%; }
     
     .cv-copy { margin:0; color:#626964; font-size:13px; line-height:1.7; }
     footer { display:flex; justify-content:space-between; padding:20px 0 30px; border-top:1px solid #e9ece9; color:#89908b; font-size:10px; }
