@@ -4,7 +4,7 @@ export const profile = {
   location: 'Illinois, United States',
   role: 'M.S. student in Computer Science',
   intro: 'I build language technologies that help people work with complex information—especially in healthcare, education, and conversational AI.',
-  email: '', // Confirm resume address: yjsun2@iillinois.edu appears to contain an extra “i”.
+  email: 'yjsun2@illinois.edu',
   linkedin: 'https://www.linkedin.com/in/yi-jyun-sun-450748287/',
   scholar: 'https://scholar.google.com/citations?user=5aD_URoAAAAJ&hl=en&authuser=1',
   github: 'https://github.com/jennycs0830',

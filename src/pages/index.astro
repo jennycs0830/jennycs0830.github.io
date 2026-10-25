@@ -26,7 +26,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
       <section class="profile-intro" id="top" aria-labelledby="intro-heading">
         <div class="profile-intro-copy">
           <p class="lede">Advised by Professor <a class="affiliation-link" href="https://siebelschool.illinois.edu/about/people/faculty/dilek" target="_blank" rel="noreferrer">Dilek Hakkani-Tür</a> and <a class="affiliation-link" href="https://siebelschool.illinois.edu/about/people/faculty/gokhan" target="_blank" rel="noreferrer">Gökhan Tür</a>, I focus on applied AI for healthcare and education. I’m especially interested in how agentic AI systems can support people through complex, real-world workflows and improve human well-being.</p>
-          <p class="contact-line">{profile.location}</p>
+          <p class="contact-line">{profile.location} · <a href={`mailto:${profile.email}`}>{profile.email}</a></p>
         </div>
       </section>
 
@@ -137,7 +137,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
 
       <section class="content-section cv-section" id="cv">
         <div class="section-heading"><p class="eyebrow">Curriculum vitae</p><h2>CV</h2></div>
-        <p class="cv-copy">For a full CV, please reach out through <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>. I’m confirming the email address listed on my current resume before adding a downloadable copy.</p>
+        <p class="cv-copy"><a href="/files/Yi-Jyun-Sun-CV.pdf" target="_blank" rel="noreferrer">Download my latest CV (PDF) ↗</a> · <a href={`mailto:${profile.email}`}>Email me</a> for inquiries.</p>
       </section>
     </main>
 
