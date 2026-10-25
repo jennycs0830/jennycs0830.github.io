@@ -3,7 +3,7 @@
 <desc id="desc">A student's spoken reading-comprehension answer is transcribed by ASR, then scored by an LLM judge against a rubric and compared with a human score. Higher word error rate is associated with lower judge-human agreement. The study explores adapting the ASR system and the LLM judge.</desc>
 <defs>
   <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#8b928d"/></marker>
-  <linearGradient id="wash" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f8fbfe"/><stop offset="1" stop-color="#fff"/></linearGradient>
+  <linearGradient id="wash" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#fff"/></linearGradient>
 </defs>
 <rect width="1280" height="760" rx="22" fill="url(#wash)"/>
 <rect x="1" y="1" width="1278" height="758" rx="21" fill="none" stroke="#d9e8f4" stroke-width="2"/>
