@@ -43,16 +43,17 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
       <section class="content-section" id="research">
         <div class="section-heading"><p class="eyebrow">Current work</p><h2>Ongoing projects</h2></div>
         <div class="research-list">
-          {research.map((item) => <article class="research-item">
+          {research.map((item) => <article class="research-item project-card">
             <div class="item-title"><h3>{item.title}</h3><span>{item.area}</span></div>
-            <p>{item.description}</p>
-            <small>{item.note}</small>
-            {publications.some((paper) => paper.project === item.title) && <div class="research-works">
-              {publications.filter((paper) => paper.project === item.title).map((paper) => <div class="research-work">
-                <p class="research-work-title">{paper.title}</p>
-                <small class="research-work-status">{paper.venue}</small>
-              </div>)}
-            </div>}
+            <p class="project-vision-label">Long-term vision</p>
+            <p class="project-vision">{item.description}</p>
+            <small class="research-project-status">{item.note}</small>
+            {publications.filter((paper) => paper.project === item.title).map((paper) => <div class="research-work">
+              <p class="research-work-label">Related research</p>
+              <h4 class="research-work-title">{paper.title}</h4>
+              <p class="research-work-role">{paper.projectRole}</p>
+              <small class="research-work-status">{paper.venue}</small>
+            </div>)}
           </article>)}
         </div>
         {publications.filter((paper) => paper.status === 'In preparation' && !paper.project).map((paper) => <div class="independent-work">
@@ -196,14 +197,19 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .section-heading .eyebrow { margin-bottom:5px; }
     h2 { margin-bottom:0; font-family:'Newsreader',Georgia,serif; font-size:31px; font-weight:400; letter-spacing:-.02em; }
     h3 { margin-bottom:4px; font-size:15px; font-weight:600; }
-    .research-list { display:grid; grid-template-columns:1fr 1fr; column-gap:38px; }
-    .research-item { padding:17px 0 19px; border-top:1px solid #edf0ed; }
+    .research-list { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .research-item { padding:17px; }
+    .project-card { border:1px solid #e6ebe7; border-radius:3px; background:#fcfdfb; }
     .item-title { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:4px 12px; }
-    .item-title span,.research-item small { color:#79807b; font-size:10px; }
-    .research-item p { margin:7px 0 8px; color:#626964; font-size:12px; line-height:1.65; }
-    .research-works { display:grid; gap:9px; margin-top:12px; padding-top:10px; border-top:1px solid #edf0ed; }
-    .research-work-title { margin:0 !important; color:#39443c !important; font-size:11px !important; font-weight:600; line-height:1.5 !important; }
-    .research-work-status { display:block; margin-top:3px; color:#718075 !important; font-size:9px !important; }
+    .item-title span { color:#79807b; font-size:10px; }
+    .project-vision-label,.research-work-label { margin:14px 0 4px; color:#718075; font-size:9px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
+    .project-vision { margin:0 0 8px; color:#626964; font-size:12px; line-height:1.65; }
+    .research-project-status { color:#79807b; font-size:10px; }
+    .research-work { margin-top:15px; padding:12px; border-left:2px solid #bdcbbf; background:#f5f7f4; }
+    .research-work-label { margin:0 0 5px; }
+    .research-work-title { margin:0 0 5px; color:#39443c; font-size:11px; font-weight:600; line-height:1.5; }
+    .research-work-role { margin:0 0 6px; color:#626964; font-size:11px; line-height:1.6; }
+    .research-work-status { display:block; color:#718075; font-size:9px; }
     .independent-work { margin-top:18px; padding:12px 14px; border:1px solid #edf0ed; }
     .independent-work-status { color:#718075; font-size:9px; letter-spacing:.06em; text-transform:uppercase; }
     .independent-work-title { margin:5px 0 0; color:#39443c; font-size:11px; font-weight:600; line-height:1.5; }
