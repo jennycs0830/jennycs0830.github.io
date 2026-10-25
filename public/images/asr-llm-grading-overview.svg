@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+<title id="title">ASR-mediated grading study overview</title>
+<desc id="desc">A student's spoken reading-comprehension answer is transcribed by ASR, then scored by an LLM judge against a rubric and compared with a human score. Higher word error rate is associated with lower judge-human agreement. The study explores adapting the ASR system and the LLM judge.</desc>
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#8b928d"/></marker>
+  <linearGradient id="wash" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fffaf6"/><stop offset="1" stop-color="#fff"/></linearGradient>
+</defs>
+<rect width="1280" height="760" rx="22" fill="url(#wash)"/>
+<rect x="1" y="1" width="1278" height="758" rx="21" fill="none" stroke="#f0ddd1" stroke-width="2"/>
+<text x="62" y="66" fill="#b85b3b" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3">READING COMPREHENSION · ASR-MEDIATED GRADING</text>
+<text x="62" y="111" fill="#253c32" font-family="Georgia,serif" font-size="31">When speech becomes text, errors can change the score.</text>
+<!-- flow connectors -->
+<path d="M298 235H354" stroke="#8b928d" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M598 235H654" stroke="#8b928d" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M898 235H954" stroke="#8b928d" stroke-width="3" marker-end="url(#arrow)"/>
+<!-- card 1 -->
+<rect x="62" y="157" width="236" height="156" rx="14" fill="#edf4ef" stroke="#c7d9ca" stroke-width="2"/>
+<circle cx="94" cy="188" r="17" fill="#d7e8dc"/>
+<path d="M86 187h4l7-6v14l-7-6h-4zM101 184q7 4 0 8M105 181q12 7 0 14" fill="none" stroke="#315b43" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="82" y="235" fill="#263b31" font-family="Arial,sans-serif" font-size="21" font-weight="700">Student response</text>
+<text x="82" y="267" fill="#5f6d64" font-family="Arial,sans-serif" font-size="17">spoken answer</text>
+<path d="M83 291h11l7-10 9 17 8-24 10 30 8-20 8 7h18" fill="none" stroke="#e2815b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- card 2 -->
+<rect x="362" y="157" width="236" height="156" rx="14" fill="#edf3f8" stroke="#c8d8e8" stroke-width="2"/>
+<circle cx="394" cy="188" r="17" fill="#d8e7f2"/>
+<path d="M384 190q5-8 10 0t10 0M384 196q5-8 10 0t10 0" fill="none" stroke="#3d6686" stroke-width="2.3" stroke-linecap="round"/>
+<text x="382" y="235" fill="#263b31" font-family="Arial,sans-serif" font-size="21" font-weight="700">ASR transcript</text>
+<text x="382" y="267" fill="#5f6d64" font-family="Arial,sans-serif" font-size="17">word errors vary</text>
+<path d="M383 289h45M383 298h72" stroke="#829eb2" stroke-width="5" stroke-linecap="round"/>
+<path d="M464 284l13 15m0-15-13 15" stroke="#df7753" stroke-width="3" stroke-linecap="round"/>
+<!-- card 3 -->
+<rect x="662" y="157" width="236" height="156" rx="14" fill="#fff1e7" stroke="#efc8b0" stroke-width="2"/>
+<circle cx="694" cy="188" r="17" fill="#ffe0cc"/>
+<path d="M687 180h14v17h-14zM690 185h8M690 189h8M690 193l2 2 4-5" fill="none" stroke="#b85637" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="682" y="235" fill="#263b31" font-family="Arial,sans-serif" font-size="21" font-weight="700">LLM judge</text>
+<text x="682" y="267" fill="#5f6d64" font-family="Arial,sans-serif" font-size="17">rubric-based score</text>
+<rect x="683" y="283" width="28" height="16" rx="8" fill="#efc7a8"/><rect x="717" y="283" width="28" height="16" rx="8" fill="#e59a71"/><rect x="751" y="283" width="28" height="16" rx="8" fill="#c85f3e"/>
+<!-- card 4 -->
+<rect x="962" y="157" width="236" height="156" rx="14" fill="#f0f3ec" stroke="#d4dcc9" stroke-width="2"/>
+<circle cx="994" cy="188" r="17" fill="#dfe8d6"/>
+<path d="M984 191l6 6 13-16" fill="none" stroke="#4c7045" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="982" y="235" fill="#263b31" font-family="Arial,sans-serif" font-size="21" font-weight="700">Human agreement</text>
+<text x="982" y="267" fill="#5f6d64" font-family="Arial,sans-serif" font-size="17">judge vs. human · QWK</text>
+<path d="M984 297a26 26 0 0 1 52 0" fill="none" stroke="#c8d6bf" stroke-width="7" stroke-linecap="round"/>
+<path d="M984 297a26 26 0 0 1 39-23" fill="none" stroke="#e2815b" stroke-width="7" stroke-linecap="round"/>
+<!-- key finding -->
+<rect x="62" y="350" width="1136" height="133" rx="14" fill="#fff" stroke="#e8e9e3" stroke-width="2"/>
+<text x="88" y="389" fill="#b85b3b" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="2">KEY FINDING</text>
+<text x="88" y="425" fill="#263b31" font-family="Arial,sans-serif" font-size="22" font-weight="700">Higher transcript error is strongly associated with lower grading agreement.</text>
+<text x="88" y="458" fill="#647067" font-family="Arial,sans-serif" font-size="17">Observed across ASR conditions and judge configurations</text>
+<rect x="1010" y="390" width="155" height="54" rx="27" fill="#fff0e6"/>
+<text x="1087" y="423" text-anchor="middle" fill="#a94730" font-family="Arial,sans-serif" font-size="20" font-weight="700">r = −0.94</text>
+<!-- recovery methods -->
+<text x="62" y="532" fill="#b85b3b" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="2">RECOVERY STRATEGIES STUDIED</text>
+<rect x="62" y="552" width="350" height="142" rx="13" fill="#edf4ef" stroke="#c7d9ca" stroke-width="2"/>
+<circle cx="96" cy="591" r="17" fill="#d7e8dc"/>
+<path d="M87 591h18M96 582v18" stroke="#315b43" stroke-width="2.5" stroke-linecap="round"/>
+<text x="126" y="598" fill="#263b31" font-family="Arial,sans-serif" font-size="20" font-weight="700">Adapt the ASR</text>
+<text x="86" y="640" fill="#5f6d64" font-family="Arial,sans-serif" font-size="16">Fine-tune on children’s speech</text>
+<path d="M440 623h29" stroke="#8b928d" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="478" y="552" width="320" height="142" rx="13" fill="#fff1e7" stroke="#efc8b0" stroke-width="2"/>
+<circle cx="512" cy="591" r="17" fill="#ffe0cc"/>
+<path d="M504 584h16v14h-16zM508 588h8M508 592h8" fill="none" stroke="#b85637" stroke-width="2" stroke-linecap="round"/>
+<text x="542" y="598" fill="#263b31" font-family="Arial,sans-serif" font-size="20" font-weight="700">Optimize the prompt</text>
+<text x="502" y="640" fill="#5f6d64" font-family="Arial,sans-serif" font-size="16">Improve scoring without weight updates</text>
+<path d="M826 623h29" stroke="#8b928d" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="864" y="552" width="334" height="142" rx="13" fill="#f1edf6" stroke="#d9cbe7" stroke-width="2"/>
+<circle cx="898" cy="591" r="17" fill="#e4d9ef"/>
+<path d="M889 585h18v13h-18zM893 581h10M893 602h10" fill="none" stroke="#775890" stroke-width="2" stroke-linecap="round"/>
+<text x="928" y="598" fill="#263b31" font-family="Arial,sans-serif" font-size="20" font-weight="700">Fine-tune the judge</text>
+<text x="888" y="640" fill="#5f6d64" font-family="Arial,sans-serif" font-size="16">Train for more robust scoring</text>
+<text x="62" y="729" fill="#858c86" font-family="Arial,sans-serif" font-size="13">Conceptual summary of the study; adaptation results are dataset-specific.</text>
+</svg>
