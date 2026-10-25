@@ -5,23 +5,24 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
 ---
 <BaseLayout title="Yi-Jyun Sun | Research Portfolio" description="Research portfolio of Yi-Jyun (Jenny) Sun, computer science graduate student at UIUC.">
   <div class="site-shell">
-    <aside class="profile-sidebar" id="top">
-      <img class="profile-photo" src="/images/jenny-headshot.jpg" alt="Yi-Jyun (Jenny) Sun" fetchpriority="high" />
-      <div class="profile-sidebar-copy">
-        <p class="eyebrow">M.S. student · Computer Science · UIUC</p>
-        <h1>Hi, I’m Jenny.</h1>
-        <p class="lede">I’m Yi-Jyun Sun, a graduate student at the University of Illinois Urbana-Champaign. I study how language technologies can help people work with complex information, especially in healthcare, education, and conversational AI.</p>
-        <p class="contact-line">Illinois, United States <span>·</span> <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a> <span>·</span> <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a></p>
-      </div>
-    </aside>
-    <div class="page-content">
-      <header class="site-header">
-        <nav aria-label="Main navigation">
-          <a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#outside">Outside the lab</a>
-        </nav>
-      </header>
+    <header class="site-header">
+      <a class="wordmark" href="#top">Yi-Jyun Sun</a>
+      <nav aria-label="Main navigation">
+        <a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#outside">Outside the lab</a>
+      </nav>
+    </header>
 
-    <main>
+    <main id="top">
+      <section class="intro" id="about">
+        <div class="intro-copy">
+          <p class="eyebrow">M.S. student · Computer Science · UIUC</p>
+          <h1>Hi, I’m Jenny.</h1>
+          <p class="lede">I’m Yi-Jyun Sun, a graduate student at the University of Illinois Urbana-Champaign. I study how language technologies can help people work with complex information, especially in healthcare, education, and conversational AI.</p>
+          <p class="contact-line">Illinois, United States <span>·</span> <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a> <span>·</span> <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a></p>
+        </div>
+        <img class="intro-photo" src="/images/jenny-sun.jpg" alt="Portrait of Yi-Jyun (Jenny) Sun" fetchpriority="high" />
+      </section>
+
       <section class="content-section" id="research">
         <div class="section-heading"><p class="eyebrow">What I work on</p><h2>Selected research</h2></div>
         <div class="research-list">
@@ -60,11 +61,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
         <div class="experience-list">
           {experience.map((item) => <article class="experience-item">
             <span class="company-logo"><img src={item.logo} alt={item.logoAlt} loading="lazy" /></span>
-            <div>
-              <h3>{item.role}</h3>
-              <p class="org">{item.role === 'Graduate Research Assistant' ? <><a class="affiliation-link" href="https://uiuc-conversational-ai-lab.github.io" target="_blank" rel="noreferrer">ConvAI Lab</a> · University of Illinois Urbana-Champaign</> : item.org}</p>
-              <p class="detail">{item.detail}</p>
-            </div>
+            <div><h3>{item.role}</h3><p class="org">{item.org}</p><p class="detail">{item.detail}</p></div>
             <p class="dates">{item.dates}</p>
           </article>)}
         </div>
@@ -73,34 +70,32 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
       <section class="content-section education-section" id="education">
         <div class="section-heading"><p class="eyebrow">A little about my path</p><h2>Education</h2></div>
         <div class="education-list">
-          {education.map((item) => <article><div>
-              <h3>{item.degree}</h3>
-              <p class="org">{item.school}</p>
-              <p class="detail">{item.school === 'University of Illinois Urbana-Champaign' ? <>Advisors: <a class="affiliation-link" href="https://siebelschool.illinois.edu/about/people/faculty/dilek" target="_blank" rel="noreferrer">Dilek Hakkani-Tür</a> and <a class="affiliation-link" href="https://siebelschool.illinois.edu/about/people/faculty/gokhan" target="_blank" rel="noreferrer">Gökhan Tür</a> · GPA 3.96 / 4.00</> : item.school === 'National Yang Ming Chiao Tung University' ? <>GPA 3.61 / 4.00 · Last 60 credits GPA 3.94 / 4.00 · Undergraduate research advisor: <a class="affiliation-link" href="https://www.cs.nycu.edu.tw/members/detail/chingchun?locale=en" target="_blank" rel="noreferrer">Ching-Chun Huang</a></> : item.detail}</p>
-            </div><p class="dates">{item.dates}</p></article>)}
+          {education.map((item) => <article><div><h3>{item.degree}</h3><p class="org">{item.school}</p><p class="detail">{item.detail}</p></div><p class="dates">{item.dates}</p></article>)}
         </div>
       </section>
 
       <section class="content-section outside-section" id="outside">
         <div class="section-heading"><p class="eyebrow">Life beyond research</p><h2>Outside the lab</h2></div>
-        <div class="basketball-stories">
-          <article class="basketball-note">
-            <img class="basketball-photo" src="/images/basketball-jenny.jpg" alt="Jenny playing basketball for National Yang Ming Chiao Tung University." loading="lazy" />
-            <div>
-              <p class="eyebrow">Taiwan · NYCU</p>
-              <h3>Student-athlete & team captain</h3>
-              <p>During my undergraduate years at National Yang Ming Chiao Tung University, I competed in Division II of Taiwan’s University Basketball Association (UBA) and served as captain of the school team. I also received the NYCU Women’s Basketball Scholarship.</p>
-            </div>
-          </article>
-          <article class="basketball-us">
-            <div class="summer-mark" aria-hidden="true"><span>3</span><small>CHAMPIONSHIPS</small></div>
-            <div>
-              <p class="eyebrow">Bay Area · Summer 2026</p>
-              <h3>Basketball in the U.S.</h3>
-              <p>While spending the summer in the Bay Area for my internship, I kept my basketball journey going. It became a wonderful summer on and off the court, with three championships to celebrate.</p>
-            </div>
-          </article>
+        <div class="basketball-note">
+          <img class="basketball-photo" src="/images/basketball-jenny.jpg" alt="Jenny playing basketball for National Yang Ming Chiao Tung University." loading="lazy" />
+          <div>
+            <h3>Student-athlete & captain</h3>
+            <p>During my undergraduate years at National Yang Ming Chiao Tung University (NYCU), I played Division II basketball in Taiwan’s University Basketball Association (UBA) and served as captain of the school team. I also received the NYCU Women’s Basketball Scholarship. Basketball remains a big part of my life, and I continued playing during a summer internship in the Bay Area.</p>
+          </div>
         </div>
+        <article class="basketball-us">
+          <div class="summer-mark" aria-hidden="true"><span>3</span><small>CHAMPIONSHIPS</small></div>
+          <div class="basketball-us-copy">
+            <p class="eyebrow">Bay Area · Summer 2026</p>
+            <h3>Basketball in the U.S.</h3>
+            <p>A wonderful summer on and off the court, with three championships to celebrate.</p>
+          </div>
+          <div class="championship-gallery" aria-label="Summer basketball championship photos">
+            <img src="/images/championship-summer-1.jpg" alt="Jenny and her teammates celebrating a championship with medals in the Bay Area." loading="lazy" />
+            <img src="/images/championship-summer-2.jpg" alt="Jenny and teammates holding commemorative shirts after a summer basketball championship." loading="lazy" />
+            <img src="/images/championship-summer-3.jpg" alt="Jenny and teammates celebrating together after a summer basketball championship." loading="lazy" />
+          </div>
+        </article>
       </section>
 
       <section class="content-section cv-section" id="cv">
@@ -110,25 +105,20 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     </main>
 
     <footer><span>© {new Date().getFullYear()} Yi-Jyun Sun</span><a href="#top">Back to top ↑</a></footer>
-    </div>
   </div>
   <style is:global>
     :root { background:#fff; color:#202321; font-family:'DM Sans',Arial,sans-serif; }
     body { margin:0; }
     a { color:#426a56; text-underline-offset:3px; }
     a:hover { color:#254733; }
-    .site-shell { width:min(100% - 64px, 1100px); margin:0 auto; display:grid; grid-template-columns:250px minmax(0,1fr); align-items:start; gap:54px; }
-    .profile-sidebar { position:sticky; top:32px; padding:54px 0 30px; }
-    .profile-photo { display:block; width:148px; aspect-ratio:4 / 5; margin:0 0 23px; object-fit:cover; object-position:center 35%; border-radius:3px; }
-    .profile-sidebar-copy h1 { margin-bottom:16px; font-family:'Newsreader',Georgia,serif; font-size:42px; font-weight:400; letter-spacing:-.035em; line-height:1.05; }
-    .profile-sidebar-copy .lede { margin-bottom:18px; color:#4e5550; font-size:14px; line-height:1.7; }
-    .page-content { min-width:0; }
-    .site-header { position:sticky; top:0; z-index:5; min-height:72px; background:rgba(255,255,255,.96); backdrop-filter:blur(8px); }
+    .site-shell { width:min(100% - 48px, 800px); margin:0 auto; }
     .site-header { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid #e9ece9; }
     .wordmark { color:#202321; font-size:14px; font-weight:600; text-decoration:none; white-space:nowrap; }
     .site-header nav { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:20px; }
     .site-header nav a { color:#606762; font-size:12px; text-decoration:none; }
     .site-header nav a:hover { color:#254733; }
+    .intro { display:grid; grid-template-columns:minmax(0,1fr) 180px; gap:38px; align-items:center; padding:76px 0 58px; }
+    .intro-photo { display:block; width:180px; aspect-ratio:7 / 9; object-fit:cover; border:1px solid #e9ece9; border-radius:2px; }
     .eyebrow { margin:0 0 10px; color:#68816e; font-size:11px; letter-spacing:.075em; text-transform:uppercase; }
     h1,h2,h3,p { margin-top:0; }
     h1 { margin-bottom:20px; font-family:'Newsreader',Georgia,serif; font-size:54px; font-weight:400; letter-spacing:-.035em; }
@@ -167,40 +157,35 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .company-logo { display:grid; width:66px; height:38px; place-items:center; }
     .company-logo img { display:block; width:auto; height:38px; max-width:66px; object-fit:contain; }
     .org { margin:0 0 6px; color:#566e5c; font-size:12px; }
-    .affiliation-link { color:inherit; text-decoration-color:#aebbb0; }
-    .affiliation-link:hover { color:#254733; }
     .detail { max-width:600px; margin:0; color:#666d68; font-size:12px; line-height:1.65; }
     .dates { margin:2px 0 0; color:#7c837e; font-size:10px; white-space:nowrap; }
-    .basketball-stories { display:grid; gap:16px; }
     .basketball-note { display:grid; grid-template-columns:235px 1fr; gap:27px; align-items:center; padding:22px; background:#f7f8f5; }
     .basketball-photo { display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; object-position:center; }
-    .basketball-note h3,.basketball-us h3 { margin-bottom:9px; font-family:'Newsreader',Georgia,serif; font-size:23px; font-weight:400; }
-    .basketball-note p,.basketball-us p { max-width:560px; margin:0; color:#626964; font-size:13px; line-height:1.75; }
-    .basketball-us { display:grid; grid-template-columns:160px 1fr; gap:27px; align-items:center; padding:25px 29px; color:#fff; background:#172e50; }
+    .basketball-note h3 { margin-bottom:9px; font-family:'Newsreader',Georgia,serif; font-size:23px; font-weight:400; }
+    .basketball-note p { max-width:560px; margin:0 0 12px; color:#626964; font-size:13px; line-height:1.75; }
+    .text-link { font-size:11px; }
+    .basketball-us { display:grid; grid-template-columns:142px minmax(0,1fr); gap:22px; align-items:center; margin-top:16px; padding:23px; color:#fff; background:#172e50; }
     .basketball-us .eyebrow { color:#a9cbcf; }
-    .basketball-us p { color:#e2e8ed; }
-    .basketball-us h3 { color:#fff; }
-    .summer-mark { display:flex; width:128px; height:128px; flex-direction:column; align-items:center; justify-content:center; border:1px solid #95b7c5; border-radius:50%; color:#ff6a32; }
-    .summer-mark span { font-family:'Newsreader',Georgia,serif; font-size:58px; line-height:1; }
-    .summer-mark small { margin-top:7px; color:#e2e8ed; font-size:8px; letter-spacing:.13em; }
-    
+    .basketball-us h3 { margin-bottom:7px; color:#fff; font-family:'Newsreader',Georgia,serif; font-size:23px; font-weight:400; }
+    .basketball-us p { margin:0; color:#e2e8ed; font-size:13px; line-height:1.75; }
+    .summer-mark { display:flex; width:112px; height:112px; flex-direction:column; align-items:center; justify-content:center; border:1px solid #95b7c5; border-radius:50%; color:#ff6a32; }
+    .summer-mark span { font-family:'Newsreader',Georgia,serif; font-size:53px; line-height:1; }
+    .summer-mark small { margin-top:7px; color:#e2e8ed; font-size:7px; letter-spacing:.13em; }
+    .championship-gallery { grid-column:1 / -1; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+    .championship-gallery img { display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:2px; background:#233b5d; }
+    .championship-gallery img:first-child { object-position:center 76%; }
+    .championship-gallery img:nth-child(2) { object-position:center 57%; }
+    .championship-gallery img:nth-child(3) { object-position:center 55%; }
     .cv-copy { margin:0; color:#626964; font-size:13px; line-height:1.7; }
     footer { display:flex; justify-content:space-between; padding:20px 0 30px; border-top:1px solid #e9ece9; color:#89908b; font-size:10px; }
     footer a { text-decoration:none; }
     @media (max-width:620px) {
-      .site-shell { width:min(100% - 36px, 800px); display:block; }
-      .profile-sidebar { position:relative; top:auto; display:grid; grid-template-columns:100px minmax(0,1fr); align-items:start; gap:0 17px; padding:28px 0 25px; }
-      .profile-photo { grid-column:1; grid-row:1; width:100px; margin:0; }
-      .profile-sidebar-copy { grid-column:2; grid-row:1; }
-      .profile-sidebar-copy .eyebrow { font-size:9px; letter-spacing:.055em; }
-      .profile-sidebar-copy h1 { margin-bottom:9px; font-size:34px; }
-      .profile-sidebar-copy .lede { margin-bottom:10px; font-size:12px; line-height:1.55; }
-      .contact-line { font-size:10px; }
-      .contact-line span { padding:0 3px; }
-      .page-content { width:100%; }
+      .site-shell { width:min(100% - 36px, 800px); }
       .site-header { align-items:flex-start; flex-direction:column; gap:12px; padding:17px 0; }
       .site-header nav { justify-content:flex-start; gap:12px 17px; }
       .site-header nav a { font-size:11px; }
+      .intro { grid-template-columns:minmax(0,1fr) 145px; gap:20px; padding:52px 0 42px; }
+      .intro-photo { width:145px; }
       h1 { font-size:46px; }
       .lede { font-size:15px; }
       .research-list { grid-template-columns:1fr; }
@@ -215,11 +200,17 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
       .education-list article { grid-template-columns:1fr; gap:5px; }
       .basketball-note { grid-template-columns:1fr; gap:18px; padding:19px; }
       .basketball-photo { width:min(100%,320px); }
-      .basketball-us { grid-template-columns:92px 1fr; gap:17px; padding:19px; }
-      .summer-mark { width:88px; height:88px; }
-      .summer-mark span { font-size:42px; }
-      .summer-mark small { font-size:6px; }
+      .basketball-us { grid-template-columns:76px minmax(0,1fr); gap:13px; padding:17px; }
+      .summer-mark { width:72px; height:72px; }
+      .summer-mark span { font-size:36px; }
+      .summer-mark small { font-size:5px; }
+      .championship-gallery { gap:6px; }
       .dates { grid-row:1; }
+    }
+    @media (max-width:520px) {
+      .intro { grid-template-columns:1fr; gap:0; }
+      .intro-copy { grid-row:2; }
+      .intro-photo { grid-row:1; width:132px; margin-bottom:24px; }
     }
   </style>
 </BaseLayout>
