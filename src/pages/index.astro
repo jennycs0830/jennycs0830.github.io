@@ -64,6 +64,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
                   {paper.url && <a class="paper-link" href={paper.url} target="_blank" rel="noreferrer">Paper <span aria-hidden="true">↗</span></a>}
                   {paper.codeUrl && <a class="paper-link" href={paper.codeUrl} target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>}
                 </div>
+                <span class={`status ${paper.status === 'Published' ? 'published' : ''}`}>{paper.status}</span>
               </div>
             </article>)}
           </article>)}
