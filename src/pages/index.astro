@@ -40,7 +40,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
             </div>
             <div class="publication-copy">
               <p class="paper-title">{paper.title}</p>
-              <p class="paper-authors">{paper.authors}</p>
+              <p class="paper-authors">{paper.authors.split(/(Y\.-J\. Sun)/).map((author) => author === 'Y.-J. Sun' ? <strong class="author-self">{author}</strong> : author)}</p>
               <p class="paper-venue">{paper.venue}</p>
               <div class="paper-links">
                 {paper.url && <a class="paper-link" href={paper.url} target="_blank" rel="noreferrer">Paper <span aria-hidden="true">↗</span></a>}
@@ -125,6 +125,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .publication-copy { min-width:0; }
     .paper-title { max-width:650px; margin:0 0 4px; font-size:13px; font-weight:600; line-height:1.55; }
     .paper-authors,.paper-venue { margin:0; color:#707772; font-size:11px; line-height:1.6; }
+    .author-self { color:#2e4937; font-weight:700; }
     .paper-venue { margin-top:2px; color:#526b58; }
     .publication-aside { min-width:0; }
     .publication-figure { margin:0; }

@@ -33,7 +33,7 @@ const filters = [
           </div>
           <div class="publication-copy">
             <p class="paper-title">{paper.title}</p>
-            <p class="paper-authors">{paper.authors}</p>
+            <p class="paper-authors">{paper.authors.split(/(Y\.-J\. Sun)/).map((author) => author === 'Y.-J. Sun' ? <strong class="author-self">{author}</strong> : author)}</p>
             <p class="paper-venue">{paper.venue}</p>
             <div class="paper-links">
               {paper.url && <a class="paper-link" href={paper.url} target="_blank" rel="noreferrer">Paper <span aria-hidden="true">↗</span></a>}
@@ -87,6 +87,7 @@ const filters = [
     .publication-figure img { display:block; width:100%; height:112px; object-fit:contain; object-position:center; border:1px solid #e5e9e5; background:#f7f8f5; }
     .paper-title { max-width:650px; margin:0 0 4px; font-size:13px; font-weight:600; line-height:1.55; }
     .paper-authors,.paper-venue { margin:0; color:#707772; font-size:11px; line-height:1.6; }
+    .author-self { color:#2e4937; font-weight:700; }
     .paper-venue { margin-top:2px; color:#526b58; }
     .paper-links { display:flex; gap:14px; }
     .paper-link { display:inline-block; margin-top:7px; font-size:10px; text-decoration:none; }
