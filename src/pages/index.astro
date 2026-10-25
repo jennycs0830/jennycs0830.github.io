@@ -47,6 +47,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
             <div class="item-title"><h3>{item.title}</h3><span>{item.area}</span></div>
             <p class="project-vision-label">Long-term vision</p>
             <p class="project-vision">{item.description}</p>
+            {item.url && <p class="project-website"><a href={item.url} target="_blank" rel="noreferrer">Project website <span aria-hidden="true">↗</span></a></p>}
             <p class="project-collaboration"><span>Collaboration</span>{item.collaboration}</p>
             <small class="research-project-status">{item.note}</small>
             {publications.filter((paper) => paper.project === item.title).map((paper) => <div class="research-work">
@@ -206,6 +207,9 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .item-title span { color:#79807b; font-size:10px; }
     .project-vision-label,.research-work-label { margin:14px 0 4px; color:#718075; font-size:9px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
     .project-vision { margin:0 0 8px; color:#626964; font-size:12px; line-height:1.65; }
+    .project-website { margin:0 0 9px; font-size:10px; }
+    .project-website a { color:#426a56; text-decoration:underline; text-decoration-color:#b6c5b8; text-underline-offset:3px; }
+    .project-website a:hover { color:#254733; text-decoration-color:currentColor; }
     .project-collaboration { margin:11px 0 8px; color:#596a5e; font-size:10px; line-height:1.5; }
     .project-collaboration span,.research-work-collaboration span { margin-right:7px; color:#718075; font-size:9px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; }
     .research-project-status { color:#79807b; font-size:10px; }
