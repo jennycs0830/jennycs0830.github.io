@@ -34,6 +34,23 @@ export const experience = [
   { logo: 'https://cdn.brand.illinois.edu/logos/block-i.svg', logoAlt: 'University of Illinois Urbana-Champaign Block I logo', role: 'Undergraduate Research Assistant', org: 'University of Illinois Urbana-Champaign · with Professor Dilek Hakkani-Tür', dates: 'May — Aug 2024', detail: 'Researched uncertainty estimation for dialogue state tracking and accountability modeling for task-oriented dialogue agents.' }
 ];
 
+export const service = [
+  {
+    category: 'Organizing',
+    items: [
+      { year: '2026', role: 'Co-organizer, Midwest Speech and Language Days (MSLD), UIUC' },
+    ],
+  },
+  {
+    category: 'Reviewing',
+    items: [
+      { year: 'May 2026', role: 'ACL Rolling Review (ARR)' },
+      { year: '2026', role: 'Midwest Speech and Language Days (MSLD)' },
+      { year: '2026', role: 'SIGDIAL' },
+    ],
+  },
+];
+
 export const education = [
   { school: 'University of Illinois Urbana-Champaign', degree: 'M.S. in Computer Science, thesis', detail: 'Advisors: Dilek Hakkani-Tür and Gökhan Tür · GPA 3.96 / 4.00', dates: 'Aug 2025 — Present' },
   { school: 'National Yang Ming Chiao Tung University', degree: 'B.S. in Computer Science', detail: 'GPA 3.61 / 4.00 · Last 60 credits GPA 3.94 / 4.00', dates: 'Sep 2020 — Jun 2025' },
