@@ -228,10 +228,10 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .basketball-photo { display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; object-position:center; }
     .basketball-note h3,.basketball-us h3 { margin-bottom:9px; font-family:'Newsreader',Georgia,serif; font-size:23px; font-weight:400; }
     .basketball-note p,.basketball-us p { max-width:560px; margin:0; color:#626964; font-size:13px; line-height:1.75; }
-    .basketball-us { display:grid; grid-template-columns:minmax(0,1fr); gap:17px; padding:22px; background:#f7f8f5; }
+    .basketball-us { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); align-items:center; gap:22px; padding:22px; background:#f7f8f5; }
     .basketball-us-copy h3 { margin-bottom:7px; }
     .basketball-us-copy .eyebrow { margin-bottom:7px; }
-    .championship-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; width:min(100%,520px); }
+    .championship-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:7px; width:100%; }
     .championship-gallery img { display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:2px; background:#ecefeb; }
     .championship-gallery img:first-child { object-position:center 76%; }
     .championship-gallery img:nth-child(2) { object-position:center 57%; }
@@ -260,8 +260,10 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
       .publication-figure img { height:76px; }
       .basketball-note { grid-template-columns:1fr; gap:18px; padding:19px; }
       .basketball-photo { width:min(100%,320px); }
-      .basketball-us { grid-template-columns:1fr; padding:19px; }
-      .championship-gallery { width:min(100%,420px); }
+      .basketball-us { grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:12px; padding:17px; }
+      .basketball-us-copy h3 { font-size:19px; line-height:1.2; }
+      .basketball-us p { font-size:11px; line-height:1.6; }
+      .championship-gallery { gap:4px; }
     }
     @media (max-width:480px) {
       .site-shell { width:min(100% - 36px, 800px); display:block; }
