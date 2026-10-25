@@ -5,16 +5,33 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
 ---
 <BaseLayout title="Yi-Jyun Sun | Research Portfolio" description="Research portfolio of Yi-Jyun (Jenny) Sun, M.S. thesis student in Computer Science at UIUC.">
   <div class="site-shell">
-    <aside class="profile-sidebar" id="top">
-      <img class="profile-photo" src="/images/jenny-headshot.jpg" alt="Yi-Jyun (Jenny) Sun" fetchpriority="high" />
-      <div class="profile-sidebar-copy">
-        <p class="eyebrow">M.S. student · Thesis option · Computer Science · UIUC</p>
-        <h1>Hi, I’m Jenny.</h1>
-        <p class="lede">I’m Yi-Jyun Sun, an M.S. student in Computer Science at the University of Illinois Urbana-Champaign, pursuing the thesis option. My research explores how language technologies can help people work with complex information, especially in healthcare, education, and conversational AI.</p>
-        <p class="contact-line">Illinois, United States <span>·</span> <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a> <span>·</span> <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a></p>
-      </div>
+    <aside class="profile-sidebar" aria-label="Personal links">
+      <nav class="profile-links" aria-label="Personal and research links">
+        <a class="profile-link" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
+        </a>
+        <a class="profile-link" href="https://scholar.google.com/scholar?q=%22Yi-Jyun+Sun%22+UIUC" target="_blank" rel="noreferrer" aria-label="Search Google Scholar for Yi-Jyun Sun" title="Google Scholar search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3Zm-6 9.27v4.2c0 2.5 2.69 4.53 6 4.53s6-2.03 6-4.53v-4.2l-6 3.27-6-3.27Z"/></svg>
+        </a>
+        <a class="profile-link" href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.68-3.75-1.32-3.75-1.32-.5-1.29-1.23-1.63-1.23-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.26 1.42 2.97 1.08.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.77 1.15 2.99 0 4.29-2.61 5.24-5.1 5.52.4.35.75 1.03.75 2.08v3.09c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
+        </a>
+        <a class="profile-link" href="https://uiuc-conversational-ai-lab.github.io" target="_blank" rel="noreferrer" aria-label="ConvAI Lab" title="ConvAI Lab">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a4 4 0 0 0-3.87 3H6a3 3 0 0 0 0 6h2.13A4 4 0 0 0 11 13.87V16H8a3 3 0 1 0 0 2h5v-4.13A4 4 0 0 0 15.87 11H18a3 3 0 1 0 0-2h-2.13A4 4 0 0 0 13 5.13V5a1 1 0 0 0-1-1h-.13A4 4 0 0 0 12 2Zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM6 7h2.13a3.98 3.98 0 0 0 0 2H6a1 1 0 1 1 0-2Zm12 0a1 1 0 1 1 0 2h-2.13a3.98 3.98 0 0 0 0-2H18ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>
+        </a>
+      </nav>
     </aside>
     <div class="page-content">
+      <section class="profile-intro" id="top" aria-labelledby="intro-heading">
+        <div class="profile-intro-copy">
+          <p class="eyebrow">M.S. student · Thesis option · Computer Science · UIUC</p>
+          <h1 id="intro-heading">Hi, I’m Jenny.</h1>
+          <p class="lede">I’m Yi-Jyun Sun, an M.S. student in Computer Science at the University of Illinois Urbana-Champaign, pursuing the thesis option. My research explores how language technologies can help people work with complex information, especially in healthcare, education, and conversational AI.</p>
+          <p class="contact-line">{profile.location}</p>
+        </div>
+        <img class="profile-photo" src="/images/jenny-headshot.jpg" alt="Portrait of Yi-Jyun (Jenny) Sun" fetchpriority="high" />
+      </section>
+
       <header class="site-header">
         <nav aria-label="Main navigation">
           <a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#outside">Outside the lab</a>
@@ -107,30 +124,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
         </div>
       </section>
 
-      <script is:inline>
-        document.querySelectorAll('[data-basketball-carousel]').forEach((carousel) => {
-          const photos = [
-            { src: '/images/championship-summer-1.jpg?v=3', alt: 'Jenny and her teammates celebrating a championship with medals in the Bay Area.' },
-            { src: '/images/championship-summer-2.jpg', alt: 'Jenny and teammates holding commemorative shirts after a summer basketball championship.' },
-            { src: '/images/championship-summer-3.jpg', alt: 'Jenny and teammates celebrating together after a summer basketball championship.' },
-          ];
-          const image = carousel.querySelector('[data-carousel-image]');
-          const count = carousel.querySelector('[data-carousel-count]');
-          let current = 0;
-          const showPhoto = (index) => {
-            current = (index + photos.length) % photos.length;
-            image.src = photos[current].src;
-            image.alt = photos[current].alt;
-            count.textContent = String(current + 1) + ' / ' + photos.length;
-          };
-          carousel.querySelectorAll('[data-carousel-previous]').forEach((button) => {
-            button.addEventListener('click', () => showPhoto(current - 1));
-          });
-          carousel.querySelectorAll('[data-carousel-next]').forEach((button) => {
-            button.addEventListener('click', () => showPhoto(current + 1));
-          });
-        });
-      </script>
+
 
       <section class="content-section cv-section" id="cv">
         <div class="section-heading"><p class="eyebrow">Curriculum vitae</p><h2>CV</h2></div>
@@ -146,11 +140,18 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     body { margin:0; }
     a { color:#426a56; text-underline-offset:3px; }
     a:hover { color:#254733; }
-    .site-shell { width:min(100% - 64px, 1100px); margin:0 auto; display:grid; grid-template-columns:250px minmax(0,1fr); align-items:start; gap:54px; }
-    .profile-sidebar { position:sticky; top:32px; padding:54px 0 30px; }
-    .profile-photo { display:block; width:148px; aspect-ratio:4 / 5; margin:0 0 23px; object-fit:cover; object-position:center 35%; border-radius:3px; }
-    .profile-sidebar-copy h1 { margin-bottom:16px; font-family:'Newsreader',Georgia,serif; font-size:42px; font-weight:400; letter-spacing:-.035em; line-height:1.05; }
-    .profile-sidebar-copy .lede { margin-bottom:18px; color:#4e5550; font-size:14px; line-height:1.7; }
+    .site-shell { width:min(100% - 64px, 1100px); margin:0 auto; display:grid; grid-template-columns:44px minmax(0,1fr); align-items:start; gap:38px; }
+    .profile-sidebar { position:sticky; top:32px; padding:34px 0 24px; }
+    .profile-links { display:grid; justify-items:center; gap:12px; }
+    .profile-link { display:grid; width:38px; height:38px; place-items:center; border:1px solid #e4e9e5; border-radius:50%; color:#53695a; background:#fff; transition:color .18s ease, border-color .18s ease, background .18s ease; }
+    .profile-link:hover { color:#254733; border-color:#bdcbbf; background:#f5f8f4; }
+    .profile-link:focus-visible { outline:2px solid #426a56; outline-offset:3px; }
+    .profile-link svg { display:block; width:17px; height:17px; fill:currentColor; }
+    .profile-intro { display:grid; grid-template-columns:minmax(0,1fr) 152px; align-items:center; gap:34px; padding:38px 0 36px; }
+    .profile-photo { display:block; width:152px; aspect-ratio:4 / 5; object-fit:cover; object-position:center 35%; border-radius:3px; }
+    .profile-intro-copy { min-width:0; }
+    .profile-intro h1 { margin-bottom:14px; font-family:'Newsreader',Georgia,serif; font-size:46px; font-weight:400; letter-spacing:-.035em; line-height:1.05; }
+    .profile-intro .lede { margin:0; color:#4e5550; font-size:15px; line-height:1.72; }
     .page-content { min-width:0; }
     .site-header { position:sticky; top:0; z-index:5; min-height:72px; background:rgba(255,255,255,.96); backdrop-filter:blur(8px); }
     .site-header { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid #e9ece9; }
@@ -217,15 +218,18 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .cv-copy { margin:0; color:#626964; font-size:13px; line-height:1.7; }
     footer { display:flex; justify-content:space-between; padding:20px 0 30px; border-top:1px solid #e9ece9; color:#89908b; font-size:10px; }
     footer a { text-decoration:none; }
-    @media (min-width:521px) and (max-width:760px) {
-      .site-shell { width:min(100% - 36px, 1100px); grid-template-columns:162px minmax(0,1fr); gap:24px; }
-      .profile-sidebar { top:20px; padding:34px 0 24px; }
-      .profile-photo { width:108px; margin-bottom:16px; }
-      .profile-sidebar-copy .eyebrow { font-size:9px; letter-spacing:.055em; }
-      .profile-sidebar-copy h1 { margin-bottom:10px; font-size:34px; }
-      .profile-sidebar-copy .lede { margin-bottom:12px; font-size:12px; line-height:1.58; }
-      .contact-line { font-size:10px; line-height:1.6; }
-      .contact-line span { padding:0 3px; }
+    @media (min-width:481px) and (max-width:760px) {
+      .site-shell { width:min(100% - 36px, 1100px); grid-template-columns:38px minmax(0,1fr); gap:20px; }
+      .profile-sidebar { top:20px; padding-top:24px; }
+      .profile-links { gap:9px; }
+      .profile-link { width:34px; height:34px; }
+      .profile-link svg { width:16px; height:16px; }
+      .profile-intro { grid-template-columns:minmax(0,1fr) 108px; gap:17px; padding:30px 0 28px; }
+      .profile-photo { width:108px; }
+      .profile-intro h1 { margin-bottom:11px; font-size:36px; }
+      .profile-intro .eyebrow { font-size:9px; letter-spacing:.055em; }
+      .profile-intro .lede { font-size:12px; line-height:1.6; }
+      .contact-line { font-size:10px; }
       .site-header nav { gap:12px; }
       .site-header nav a { font-size:10px; }
       .research-list { grid-template-columns:1fr; }
@@ -233,27 +237,27 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
       .publication-figure img { height:76px; }
       .basketball-note { grid-template-columns:1fr; gap:18px; padding:19px; }
       .basketball-photo { width:min(100%,320px); }
-      .basketball-us { padding:19px; }
+      .basketball-us { grid-template-columns:1fr; padding:19px; }
+      .championship-gallery { width:min(100%,420px); }
     }
-    @media (max-width:620px) {
+    @media (max-width:480px) {
       .site-shell { width:min(100% - 36px, 800px); display:block; }
-      .profile-sidebar { position:relative; top:auto; display:grid; grid-template-columns:100px minmax(0,1fr); align-items:start; gap:0 17px; padding:28px 0 25px; }
-      .profile-photo { grid-column:1; grid-row:1; width:100px; margin:0; }
-      .profile-sidebar-copy { grid-column:2; grid-row:1; }
-      .profile-sidebar-copy .eyebrow { font-size:9px; letter-spacing:.055em; }
-      .profile-sidebar-copy h1 { margin-bottom:9px; font-size:34px; }
-      .profile-sidebar-copy .lede { margin-bottom:10px; font-size:12px; line-height:1.55; }
-      .contact-line { font-size:10px; }
-      .contact-line span { padding:0 3px; }
+      .profile-sidebar { position:relative; top:auto; display:flex; justify-content:flex-end; padding:10px 0 3px; }
+      .profile-links { display:flex; gap:8px; }
+      .profile-link { width:34px; height:34px; }
       .page-content { width:100%; }
-      .site-header { align-items:flex-start; flex-direction:column; gap:12px; padding:17px 0; }
+      .profile-intro { grid-template-columns:minmax(0,1fr) 82px; gap:13px; padding:24px 0 26px; }
+      .profile-photo { width:82px; }
+      .profile-intro h1 { margin-bottom:9px; font-size:34px; }
+      .profile-intro .eyebrow { margin-bottom:7px; font-size:8px; letter-spacing:.04em; }
+      .profile-intro .lede { font-size:12px; line-height:1.55; }
+      .contact-line { font-size:10px; }
+      .site-header { align-items:flex-start; flex-direction:column; gap:12px; padding:14px 0; }
       .site-header nav { justify-content:flex-start; gap:12px 17px; }
       .site-header nav a { font-size:11px; }
-      h1 { font-size:46px; }
-      .lede { font-size:15px; }
       .research-list { grid-template-columns:1fr; }
-      .publication-item { grid-template-columns:112px minmax(0,1fr); gap:12px; }
-      .publication-figure img { height:76px; }
+      .publication-item { grid-template-columns:96px minmax(0,1fr); gap:10px; }
+      .publication-figure img { height:68px; }
       .experience-item { grid-template-columns:50px minmax(0,1fr); gap:8px 11px; }
       .company-logo { width:46px; }
       .company-logo img { max-width:46px; }
@@ -263,13 +267,8 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
       .education-list article { grid-template-columns:1fr; gap:5px; }
       .basketball-note { grid-template-columns:1fr; gap:18px; padding:19px; }
       .basketball-photo { width:min(100%,320px); }
-      .basketball-us { padding:17px; }
-      .championship-photo { height:clamp(240px,68vw,340px); }
-      .carousel-control { width:38px; height:38px; }
-      .basketball-us { grid-template-columns:92px 1fr; gap:17px; padding:19px; }
-      .summer-mark { width:88px; height:88px; }
-      .summer-mark span { font-size:42px; }
-      .summer-mark small { font-size:6px; }
+      .basketball-us { grid-template-columns:1fr; gap:14px; padding:17px; }
+      .championship-gallery { gap:6px; width:100%; }
       .dates { grid-row:1; }
     }
   </style>
