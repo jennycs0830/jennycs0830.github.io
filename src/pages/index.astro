@@ -34,7 +34,9 @@ import { profile, research, publications, experience, education } from '../data/
         <div class="section-heading"><p class="eyebrow">Papers & writing</p><h2>Publications</h2></div>
         <ol class="publication-list">
           {publications.map((paper) => <li>
-            <div><p class="paper-title">{paper.title}</p><p class="paper-authors">{paper.authors}</p><p class="paper-venue">{paper.venue}</p></div>
+            <div><p class="paper-title">{paper.title}</p><p class="paper-authors">{paper.authors}</p><p class="paper-venue">{paper.venue}</p>
+              {paper.visual && <figure class="publication-figure"><a href={paper.visual} target="_blank" rel="noreferrer"><img src={paper.visual} alt={paper.visualAlt} loading="lazy" /></a><figcaption>{paper.visualCaption}</figcaption></figure>}
+            </div>
             <span class={`status ${paper.status === 'Published' ? 'published' : ''}`}>{paper.status}</span>
           </li>)}
         </ol>
@@ -111,6 +113,10 @@ import { profile, research, publications, experience, education } from '../data/
     .paper-title { max-width:650px; margin:0 0 4px; font-size:13px; font-weight:600; line-height:1.55; }
     .paper-authors,.paper-venue { margin:0; color:#707772; font-size:11px; line-height:1.6; }
     .paper-venue { margin-top:2px; color:#526b58; }
+    .publication-figure { margin:15px 0 2px; }
+    .publication-figure a { display:block; }
+    .publication-figure img { display:block; width:100%; height:auto; border:1px solid #e5e9e5; background:white; }
+    .publication-figure figcaption { margin-top:6px; color:#737a75; font-size:10px; line-height:1.55; }
     .status { align-self:start; padding-top:2px; color:#a26b45; font-size:9px; letter-spacing:.04em; text-transform:uppercase; white-space:nowrap; }
     .status.published { color:#547259; }
     .experience-item,.education-list article { display:grid; grid-template-columns:1fr auto; gap:18px; padding:16px 0; border-top:1px solid #edf0ed; }
