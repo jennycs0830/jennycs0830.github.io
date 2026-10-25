@@ -63,7 +63,11 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
         <div class="experience-list">
           {experience.map((item) => <article class="experience-item">
             <span class="company-logo"><img src={item.logo} alt={item.logoAlt} loading="lazy" /></span>
-            <div><h3>{item.role}</h3><p class="org">{item.org}</p><p class="detail">{item.detail}</p></div>
+            <div>
+              <h3>{item.role}</h3>
+              <p class="org">{item.role === 'Graduate Research Assistant' ? <><a class="affiliation-link" href="https://uiuc-conversational-ai-lab.github.io" target="_blank" rel="noreferrer">ConvAI Lab</a> · University of Illinois Urbana-Champaign</> : item.org}</p>
+              <p class="detail">{item.detail}</p>
+            </div>
             <p class="dates">{item.dates}</p>
           </article>)}
         </div>
@@ -72,7 +76,11 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
       <section class="content-section education-section" id="education">
         <div class="section-heading"><p class="eyebrow">A little about my path</p><h2>Education</h2></div>
         <div class="education-list">
-          {education.map((item) => <article><div><h3>{item.degree}</h3><p class="org">{item.school}</p><p class="detail">{item.detail}</p></div><p class="dates">{item.dates}</p></article>)}
+          {education.map((item) => <article><div>
+              <h3>{item.degree}</h3>
+              <p class="org">{item.school}</p>
+              <p class="detail">{item.school === 'University of Illinois Urbana-Champaign' ? <>Advisors: <a class="affiliation-link" href="https://siebelschool.illinois.edu/about/people/faculty/dilek" target="_blank" rel="noreferrer">Dilek Hakkani-Tür</a> and <a class="affiliation-link" href="https://siebelschool.illinois.edu/about/people/faculty/gokhan" target="_blank" rel="noreferrer">Gökhan Tür</a> · GPA 3.96 / 4.00</> : item.school === 'National Yang Ming Chiao Tung University' ? <>GPA 3.61 / 4.00 · Last 60 credits GPA 3.94 / 4.00 · Undergraduate research advisor: <a class="affiliation-link" href="https://www.cs.nycu.edu.tw/members/detail/chingchun?locale=en" target="_blank" rel="noreferrer">Ching-Chun Huang</a></> : item.detail}</p>
+            </div><p class="dates">{item.dates}</p></article>)}
         </div>
       </section>
 
@@ -158,6 +166,8 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .company-logo { display:grid; width:66px; height:38px; place-items:center; }
     .company-logo img { display:block; width:auto; height:38px; max-width:66px; object-fit:contain; }
     .org { margin:0 0 6px; color:#566e5c; font-size:12px; }
+    .affiliation-link { color:inherit; text-decoration-color:#aebbb0; }
+    .affiliation-link:hover { color:#254733; }
     .detail { max-width:600px; margin:0; color:#666d68; font-size:12px; line-height:1.65; }
     .dates { margin:2px 0 0; color:#7c837e; font-size:10px; white-space:nowrap; }
     .basketball-stories { display:grid; gap:16px; }
