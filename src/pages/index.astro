@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { profile, research, publications, experience, education } from '../data/site.js';
+import { profile, research, publications, experience, education, service } from '../data/site.js';
 const selectedPublications = publications.filter((paper) => paper.status === 'Published');
 ---
 <BaseLayout title="Yi-Jyun Sun | Research Portfolio" description="Research portfolio of Yi-Jyun (Jenny) Sun, M.S. thesis student in Computer Science at UIUC.">
@@ -34,7 +34,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
 
       <header class="site-header">
         <nav aria-label="Main navigation">
-          <a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#outside">Outside the lab</a>
+          <a href="#research">Research</a><a href="#publications">Publications</a><a href="#service">Service</a><a href="#experience">Experience</a><a href="#outside">Outside the lab</a>
         </nav>
       </header>
 
@@ -70,6 +70,18 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
           </li>)}
         </ol>
         <a class="all-papers-link" href="/publications/">All papers <span aria-hidden="true">↗</span></a>
+      </section>
+
+      <section class="content-section service-section" id="service">
+        <div class="section-heading"><p class="eyebrow">Community contributions</p><h2>Service</h2></div>
+        <div class="service-grid">
+          {service.map((group) => <article class="service-group">
+            <h3>{group.category}</h3>
+            <ul>
+              {group.items.map((item) => <li><span class="service-year">{item.year}</span><span>{item.role}</span></li>)}
+            </ul>
+          </article>)}
+        </div>
       </section>
 
       <section class="content-section" id="experience">
@@ -192,6 +204,12 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .all-papers-link span { margin-left:3px; }
     .status { align-self:start; padding-top:2px; color:#a26b45; font-size:9px; letter-spacing:.04em; text-transform:uppercase; white-space:nowrap; }
     .status.published { color:#547259; }
+    .service-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:34px; }
+    .service-group { padding-top:14px; border-top:1px solid #edf0ed; }
+    .service-group h3 { margin-bottom:10px; color:#526b58; font-size:12px; }
+    .service-group ul { display:grid; gap:9px; margin:0; padding:0; list-style:none; }
+    .service-group li { display:grid; grid-template-columns:74px minmax(0,1fr); gap:10px; color:#626964; font-size:12px; line-height:1.55; }
+    .service-year { color:#7c837e; font-size:10px; white-space:nowrap; }
     .experience-item { display:grid; grid-template-columns:66px minmax(0,1fr) auto; align-items:start; gap:13px; padding:16px 0; border-top:1px solid #edf0ed; }
     .education-list article { display:grid; grid-template-columns:1fr auto; align-items:start; gap:18px; padding:16px 0; border-top:1px solid #edf0ed; }
     .company-logo { display:grid; width:66px; height:38px; place-items:center; }
@@ -233,6 +251,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
       .site-header nav { gap:12px; }
       .site-header nav a { font-size:10px; }
       .research-list { grid-template-columns:1fr; }
+      .service-grid { grid-template-columns:1fr; gap:20px; }
       .publication-item { grid-template-columns:112px minmax(0,1fr); gap:12px; }
       .publication-figure img { height:76px; }
       .basketball-note { grid-template-columns:1fr; gap:18px; padding:19px; }
