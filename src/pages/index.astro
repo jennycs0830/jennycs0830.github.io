@@ -2,85 +2,148 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { profile, research, publications, experience, education } from '../data/site.js';
 ---
-<BaseLayout>
-  <div class="min-h-screen overflow-hidden">
-    <header class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 lg:px-10">
-      <a href="#top" class="flex items-center gap-3 no-underline" aria-label="Yi-Jyun Sun home">
-        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-ink text-sm font-semibold text-paper">JS</span>
-        <span class="text-sm font-semibold tracking-tight">Yi-Jyun Sun <span class="font-normal text-moss">/ Jenny</span></span>
-      </a>
-      <nav class="hidden items-center gap-7 text-xs text-ink/70 md:flex" aria-label="Main navigation">
-        <a class="hover:text-clay" href="#about">About</a><a class="hover:text-clay" href="#research">Research</a><a class="hover:text-clay" href="#publications">Publications</a><a class="hover:text-clay" href="#experience">Experience</a><a class="hover:text-clay" href="#contact">Contact</a>
+<BaseLayout title="Yi-Jyun Sun | Research Portfolio" description="Research portfolio of Yi-Jyun (Jenny) Sun, computer science graduate student at UIUC.">
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="wordmark" href="#top">Yi-Jyun Sun</a>
+      <nav aria-label="Main navigation">
+        <a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#outside">Outside the lab</a>
       </nav>
-      <a href="#contact" class="rounded-full border border-ink/20 px-4 py-2 text-xs transition hover:bg-ink hover:text-paper">Let’s connect <span aria-hidden="true">↗</span></a>
     </header>
 
     <main id="top">
-      <section class="relative mx-auto grid max-w-6xl gap-12 px-6 pb-24 pt-16 lg:grid-cols-[1.35fr_.65fr] lg:px-10 lg:pb-32 lg:pt-24">
-        <div class="absolute -right-36 -top-24 -z-10 h-[520px] w-[520px] rounded-full bg-[#e8e9df] blur-3xl"></div>
-        <div class="max-w-3xl">
-          <p class="mono mb-7 text-[11px] uppercase tracking-[.22em] text-moss">Research · Language · Human-centered AI</p>
-          <h1 class="serif max-w-3xl text-6xl leading-[.98] tracking-[-.045em] sm:text-7xl lg:text-[92px]">Making AI more <em class="font-normal text-moss">thoughtful.</em></h1>
-          <p class="mt-8 max-w-2xl text-lg leading-8 text-ink/70">I’m {profile.name} <span class="text-moss">({profile.nickname})</span>, a computer science graduate student at UIUC. {profile.intro}</p>
-          <div class="mt-9 flex flex-wrap gap-3">
-            <a href="#research" class="rounded-full bg-ink px-5 py-3 text-sm text-paper no-underline transition hover:bg-moss">Explore my work <span class="ml-2">↓</span></a>
-            <a href="#publications" class="rounded-full border border-ink/20 px-5 py-3 text-sm no-underline transition hover:border-ink">View publications <span class="ml-2">↗</span></a>
+      <section class="intro" id="about">
+        <p class="eyebrow">M.S. student · Computer Science · UIUC</p>
+        <h1>Hi, I’m Jenny.</h1>
+        <p class="lede">I’m Yi-Jyun Sun, a graduate student at the University of Illinois Urbana-Champaign. I study how language technologies can help people work with complex information, especially in healthcare, education, and conversational AI.</p>
+        <p class="contact-line">Illinois, United States <span>·</span> <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a> <span>·</span> <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a></p>
+      </section>
+
+      <section class="content-section" id="research">
+        <div class="section-heading"><p class="eyebrow">What I work on</p><h2>Selected research</h2></div>
+        <div class="research-list">
+          {research.map((item) => <article class="research-item">
+            <div class="item-title"><h3>{item.title}</h3><span>{item.area}</span></div>
+            <p>{item.description}</p>
+            <small>{item.note}</small>
+          </article>)}
+        </div>
+      </section>
+
+      <section class="content-section" id="publications">
+        <div class="section-heading"><p class="eyebrow">Papers & writing</p><h2>Publications</h2></div>
+        <ol class="publication-list">
+          {publications.map((paper) => <li>
+            <div><p class="paper-title">{paper.title}</p><p class="paper-authors">{paper.authors}</p><p class="paper-venue">{paper.venue}</p></div>
+            <span class={`status ${paper.status === 'Published' ? 'published' : ''}`}>{paper.status}</span>
+          </li>)}
+        </ol>
+      </section>
+
+      <section class="content-section" id="experience">
+        <div class="section-heading"><p class="eyebrow">Research & industry</p><h2>Experience</h2></div>
+        <div class="experience-list">
+          {experience.map((item) => <article class="experience-item">
+            <div><h3>{item.role}</h3><p class="org">{item.org}</p><p class="detail">{item.detail}</p></div>
+            <p class="dates">{item.dates}</p>
+          </article>)}
+        </div>
+      </section>
+
+      <section class="content-section education-section" id="education">
+        <div class="section-heading"><p class="eyebrow">A little about my path</p><h2>Education</h2></div>
+        <div class="education-list">
+          {education.map((item) => <article><div><h3>{item.degree}</h3><p class="org">{item.school}</p><p class="detail">{item.detail}</p></div><p class="dates">{item.dates}</p></article>)}
+        </div>
+      </section>
+
+      <section class="content-section outside-section" id="outside">
+        <div class="section-heading"><p class="eyebrow">Life beyond research</p><h2>Outside the lab</h2></div>
+        <div class="basketball-note">
+          <div class="court-mark" aria-hidden="true"><span></span></div>
+          <div>
+            <h3>Basketball</h3>
+            <p>Basketball is one of the things I keep coming back to. I love the pace of the game, the teamwork, and the small decisions that change a play. My interest has followed me off the court too: I put together a small dataset of basketball clips labeled for defense, dribbling, shooting, passing, and more.</p>
+            <a class="text-link" href="https://github.com/jennycs0830/basketball_action_dataset" target="_blank" rel="noreferrer">Basketball action dataset <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="mt-14 flex items-center gap-3 text-xs text-ink/55"><span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-moss opacity-50"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-moss"></span></span> {profile.role} <span class="text-ink/25">/</span> {profile.location}</div>
-        </div>
-        <div class="relative flex items-center justify-center lg:justify-end">
-          <div class="grain relative aspect-[.82] w-full max-w-[340px] overflow-hidden rounded-[180px_180px_24px_24px] bg-[#dce4d8]">
-            <div class="absolute inset-0 opacity-70" style="background: radial-gradient(ellipse at 50% 28%, #f1f0e6 0 9%, transparent 9.5%), radial-gradient(ellipse at 50% 53%, #78917c 0 27%, transparent 27.5%), linear-gradient(145deg,#cad9cc,#ebe8dc 65%,#c9d6ca)"></div>
-            <div class="absolute bottom-7 left-1/2 -translate-x-1/2 rounded-full border border-white/50 bg-white/45 px-4 py-2 text-[10px] tracking-[.16em] text-ink/75 backdrop-blur-sm">A LITTLE ABOUT ME</div>
-            <div class="absolute left-6 top-8 mono text-[10px] leading-5 text-ink/55">40°06′N<br />88°14′W</div>
-          </div>
-          <div class="absolute -bottom-5 left-4 rotate-[-7deg] rounded-lg bg-[#f0ddc3] px-4 py-3 shadow-sm lg:left-0"><span class="serif text-lg italic">curious by nature</span><span class="ml-2 text-clay">✳</span></div>
-          <div class="absolute right-0 top-12 hidden h-20 w-20 rounded-full border border-moss/30 md:block"><span class="absolute inset-0 flex items-center justify-center text-xl text-moss">✳</span></div>
         </div>
       </section>
 
-      <section id="about" class="border-y border-ink/10 bg-[#eeeee6]">
-        <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[.55fr_1.45fr] lg:px-10 lg:py-20">
-          <div><p class="mono text-[10px] uppercase tracking-[.2em] text-clay">01 / About</p><h2 class="serif mt-4 text-4xl">A little context.</h2></div>
-          <div class="max-w-3xl">
-            <p class="text-lg leading-8 text-ink/75">My work sits at the intersection of language, reasoning, and human needs. I’m interested in AI systems that can explain what they know, recognize what they don’t, and support people in high-stakes settings.</p>
-            <p class="mt-5 leading-7 text-ink/65">At the ConvAI Lab at UIUC, I work with conversational AI, evaluation, and agentic workflows. Across research and applied roles, I’ve explored healthcare, early literacy, speech, and dialogue systems.</p>
-            <div class="mt-8 grid gap-6 border-t border-ink/10 pt-6 sm:grid-cols-2">{education.map((item) => <div><p class="mono text-[10px] uppercase tracking-wider text-moss">{item.dates}</p><h3 class="mt-2 font-semibold">{item.school}</h3><p class="mt-1 text-sm text-ink/65">{item.degree}</p><p class="mt-1 text-xs text-ink/50">{item.detail}</p></div>)}</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="research" class="mx-auto max-w-6xl px-6 py-20 lg:px-10 lg:py-28">
-        <div class="mb-10 flex flex-wrap items-end justify-between gap-5"><div><p class="mono text-[10px] uppercase tracking-[.2em] text-clay">02 / Selected research</p><h2 class="serif mt-4 text-5xl tracking-tight">Questions I’m working on.</h2></div><p class="max-w-xs text-sm leading-6 text-ink/55">Projects across language technology, agentic systems, and human-centered evaluation.</p></div>
-        <div class="grid gap-4 md:grid-cols-2">{research.map((item) => <article class={`group relative overflow-hidden rounded-2xl border border-ink/10 bg-white/45 p-7 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-ink/5 ${item.accent}`}>
-          <div class="absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-40 transition group-hover:scale-125" style={`background:${item.accent === 'green' ? '#dce8dc' : item.accent === 'peach' ? '#f2dfd3' : item.accent === 'blue' ? '#dbe4ec' : '#efe7cc'}`}></div>
-          <div class="relative"><div class="flex items-center justify-between"><span class="mono text-xs text-ink/40">{item.number} <span class="mx-2">/</span> {item.area}</span><span class="text-2xl text-moss">↗</span></div><h3 class="serif mt-8 text-3xl">{item.title}</h3><p class="mt-3 max-w-lg text-sm leading-6 text-ink/65">{item.description}</p><p class="mono mt-7 inline-flex rounded-full bg-white/65 px-3 py-1.5 text-[10px] tracking-wide text-moss">{item.note}</p></div>
-        </article>)}</div>
-      </section>
-
-      <section id="publications" class="bg-ink text-paper">
-        <div class="mx-auto max-w-6xl px-6 py-20 lg:px-10 lg:py-28">
-          <div class="mb-10 flex items-end justify-between"><div><p class="mono text-[10px] uppercase tracking-[.2em] text-[#d49a7f]">03 / Publications</p><h2 class="serif mt-4 text-5xl tracking-tight">Writing & research.</h2></div><span class="mono hidden text-xs text-paper/40 sm:block">2024 — 2027</span></div>
-          <div class="divide-y divide-white/15">{publications.map((paper, i) => <article class="grid gap-3 py-6 sm:grid-cols-[42px_1fr_auto] sm:gap-5"><span class="mono pt-1 text-xs text-paper/35">0{i + 1}</span><div><h3 class="serif max-w-4xl text-xl leading-snug">{paper.title}</h3><p class="mt-2 text-xs leading-5 text-paper/50">{paper.authors}</p><p class="mt-1 text-sm text-paper/65">{paper.venue}</p></div><span class={`mono mt-1 h-fit w-fit rounded-full border px-3 py-1 text-[9px] uppercase tracking-wider ${paper.status === 'Published' ? 'border-[#a9c5a9]/30 text-[#b8d3b8]' : paper.status === 'Under review' ? 'border-[#e8be9f]/30 text-[#e8be9f]' : 'border-white/20 text-paper/50'}`}>{paper.status}</span></article>)}</div>
-          <p class="mt-7 text-xs text-paper/40">Publication links can be added when confirmed. Statuses reflect the resume provided.</p>
-        </div>
-      </section>
-
-      <section id="experience" class="mx-auto max-w-6xl px-6 py-20 lg:px-10 lg:py-28">
-        <div class="mb-10"><p class="mono text-[10px] uppercase tracking-[.2em] text-clay">04 / Experience</p><h2 class="serif mt-4 text-5xl tracking-tight">Where I’ve learned.</h2></div>
-        <div class="grid gap-10 lg:grid-cols-[.55fr_1.45fr]"><div class="max-w-xs text-sm leading-6 text-ink/60">Research and applied work have taught me to move between careful experimentation and real-world constraints.</div><div class="divide-y divide-ink/10">{experience.map((item) => <article class="grid gap-2 py-5 sm:grid-cols-[1fr_auto]"><div><div class="flex flex-wrap items-center gap-2"><h3 class="font-semibold">{item.role}</h3>{item.current && <span class="mono rounded-full bg-[#e2e9df] px-2 py-1 text-[9px] uppercase text-moss">Current</span>}{item.pending && <span class="mono rounded-full bg-[#f3e3d7] px-2 py-1 text-[9px] uppercase text-clay">High-level summary</span>}</div><p class="mt-1 text-sm text-ink/60">{item.org}</p><p class="mt-3 max-w-2xl text-sm leading-6 text-ink/65">{item.detail}</p></div><p class="mono pt-1 text-[10px] text-ink/45">{item.dates}</p></article>)}</div></div>
-      </section>
-
-      <section class="border-y border-ink/10 bg-[#e9e9df]">
-        <div class="mx-auto grid max-w-6xl gap-8 px-6 py-14 sm:grid-cols-[.55fr_1.45fr] lg:px-10"><div><p class="mono text-[10px] uppercase tracking-[.2em] text-clay">Off the clock</p><h2 class="serif mt-3 text-3xl">Basketball, always.</h2></div><div class="flex items-center gap-6"><div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#c67a51] text-4xl text-[#f7ead8] shadow-inner">◉</div><p class="max-w-xl text-sm leading-6 text-ink/65">A lifelong basketball fan. The game’s mix of teamwork, improvisation, and reading what happens next feels familiar in the best way. <span class="italic">Favorite team / player: add your pick here.</span></p></div></div>
+      <section class="content-section cv-section" id="cv">
+        <div class="section-heading"><p class="eyebrow">Curriculum vitae</p><h2>CV</h2></div>
+        <p class="cv-copy">For a full CV, please reach out through <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>. I’m confirming the email address listed on my current resume before adding a downloadable copy.</p>
       </section>
     </main>
 
-    <footer id="contact" class="bg-[#17231e] text-paper">
-      <div class="mx-auto max-w-6xl px-6 py-16 lg:px-10 lg:py-20">
-        <div class="grid gap-10 sm:grid-cols-[1fr_auto] sm:items-end"><div><p class="mono text-[10px] uppercase tracking-[.2em] text-[#d49a7f]">05 / Contact</p><h2 class="serif mt-4 max-w-2xl text-5xl leading-tight">Have a question or an idea?</h2><p class="mt-4 max-w-xl text-sm leading-6 text-paper/60">I’d be glad to hear from researchers, collaborators, and curious people.</p></div><div class="flex flex-col items-start gap-3 text-sm">{profile.email ? <a class="underline decoration-white/25 underline-offset-4 hover:decoration-white" href={`mailto:${profile.email}`}>{profile.email} ↗</a> : <span class="text-xs text-[#e8be9f]">Email pending confirmation — resume lists yjsun2@iillinois.edu</span>}<a class="text-paper/65 hover:text-paper" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="text-paper/65 hover:text-paper" href={profile.github} target="_blank" rel="noreferrer">GitHub ↗</a><span class="text-paper/45">{profile.location}</span></div></div>
-        <div class="mt-16 flex flex-wrap justify-between gap-3 border-t border-white/15 pt-5 text-[10px] text-paper/35"><span>© {new Date().getFullYear()} Yi-Jyun Sun · Made with curiosity</span><a href="#top" class="no-underline hover:text-paper">Back to top ↑</a></div>
-      </div>
-    </footer>
+    <footer><span>© {new Date().getFullYear()} Yi-Jyun Sun</span><a href="#top">Back to top ↑</a></footer>
   </div>
+  <style is:global>
+    :root { background:#fff; color:#202321; font-family:'DM Sans',Arial,sans-serif; }
+    body { margin:0; }
+    a { color:#426a56; text-underline-offset:3px; }
+    a:hover { color:#254733; }
+    .site-shell { width:min(100% - 48px, 800px); margin:0 auto; }
+    .site-header { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid #e9ece9; }
+    .wordmark { color:#202321; font-size:14px; font-weight:600; text-decoration:none; white-space:nowrap; }
+    .site-header nav { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:20px; }
+    .site-header nav a { color:#606762; font-size:12px; text-decoration:none; }
+    .site-header nav a:hover { color:#254733; }
+    .intro { padding:76px 0 58px; }
+    .eyebrow { margin:0 0 10px; color:#68816e; font-size:11px; letter-spacing:.075em; text-transform:uppercase; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { margin-bottom:20px; font-family:'Newsreader',Georgia,serif; font-size:54px; font-weight:400; letter-spacing:-.035em; }
+    .lede { max-width:660px; margin-bottom:22px; color:#4e5550; font-size:17px; line-height:1.75; }
+    .contact-line { margin:0; color:#777e79; font-size:12px; }
+    .contact-line span { padding:0 7px; color:#b3b9b4; }
+    .contact-line a { color:#4f6b56; }
+    .content-section { padding:43px 0 47px; border-top:1px solid #e9ece9; }
+    .section-heading { margin-bottom:23px; }
+    .section-heading .eyebrow { margin-bottom:5px; }
+    h2 { margin-bottom:0; font-family:'Newsreader',Georgia,serif; font-size:31px; font-weight:400; letter-spacing:-.02em; }
+    h3 { margin-bottom:4px; font-size:15px; font-weight:600; }
+    .research-list { display:grid; grid-template-columns:1fr 1fr; column-gap:38px; }
+    .research-item { padding:17px 0 19px; border-top:1px solid #edf0ed; }
+    .item-title { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:4px 12px; }
+    .item-title span,.research-item small { color:#79807b; font-size:10px; }
+    .research-item p { margin:7px 0 8px; color:#626964; font-size:12px; line-height:1.65; }
+    .publication-list { margin:0; padding:0; list-style:none; }
+    .publication-list li { display:grid; grid-template-columns:1fr auto; gap:16px; padding:16px 0; border-top:1px solid #edf0ed; }
+    .paper-title { max-width:650px; margin:0 0 4px; font-size:13px; font-weight:600; line-height:1.55; }
+    .paper-authors,.paper-venue { margin:0; color:#707772; font-size:11px; line-height:1.6; }
+    .paper-venue { margin-top:2px; color:#526b58; }
+    .status { align-self:start; padding-top:2px; color:#a26b45; font-size:9px; letter-spacing:.04em; text-transform:uppercase; white-space:nowrap; }
+    .status.published { color:#547259; }
+    .experience-item,.education-list article { display:grid; grid-template-columns:1fr auto; gap:18px; padding:16px 0; border-top:1px solid #edf0ed; }
+    .org { margin:0 0 6px; color:#566e5c; font-size:12px; }
+    .detail { max-width:600px; margin:0; color:#666d68; font-size:12px; line-height:1.65; }
+    .dates { margin:2px 0 0; color:#7c837e; font-size:10px; white-space:nowrap; }
+    .basketball-note { display:grid; grid-template-columns:130px 1fr; gap:26px; align-items:center; padding:22px; background:#f7f8f5; }
+    .basketball-note h3 { margin-bottom:9px; font-family:'Newsreader',Georgia,serif; font-size:23px; font-weight:400; }
+    .basketball-note p { max-width:560px; margin:0 0 12px; color:#626964; font-size:13px; line-height:1.75; }
+    .text-link { font-size:11px; }
+    .court-mark { position:relative; display:grid; width:122px; height:122px; place-items:center; overflow:hidden; border:1px solid #d4ddd3; border-radius:50%; background:#edf2ea; }
+    .court-mark::before { width:72px; height:72px; border:1px solid #9bb09b; border-radius:50%; content:''; }
+    .court-mark::after { position:absolute; top:0; bottom:0; width:1px; background:#9bb09b; content:''; }
+    .court-mark span { position:absolute; left:0; right:0; height:1px; background:#9bb09b; }
+    .cv-copy { margin:0; color:#626964; font-size:13px; line-height:1.7; }
+    footer { display:flex; justify-content:space-between; padding:20px 0 30px; border-top:1px solid #e9ece9; color:#89908b; font-size:10px; }
+    footer a { text-decoration:none; }
+    @media (max-width:620px) {
+      .site-shell { width:min(100% - 36px, 800px); }
+      .site-header { align-items:flex-start; flex-direction:column; gap:12px; padding:17px 0; }
+      .site-header nav { justify-content:flex-start; gap:12px 17px; }
+      .site-header nav a { font-size:11px; }
+      .intro { padding:52px 0 42px; }
+      h1 { font-size:46px; }
+      .lede { font-size:15px; }
+      .research-list { grid-template-columns:1fr; }
+      .publication-list li,.experience-item,.education-list article { grid-template-columns:1fr; gap:5px; }
+      .status { grid-row:1; }
+      .publication-list li { gap:6px; }
+      .basketball-note { grid-template-columns:1fr; gap:18px; padding:19px; }
+      .court-mark { width:86px; height:86px; }
+      .court-mark::before { width:50px; height:50px; }
+      .dates { grid-row:1; }
+    }
+  </style>
 </BaseLayout>
