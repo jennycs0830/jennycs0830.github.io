@@ -34,15 +34,15 @@ import { profile, research, publications, experience, education } from '../data/
         <div class="section-heading"><p class="eyebrow">Papers & writing</p><h2>Publications</h2></div>
         <ol class="publication-list">
           {publications.map((paper) => <li class:list={['publication-item', paper.visual && 'has-visual']}>
+            <div class="publication-aside">
+              {paper.visual && <figure class="publication-figure"><img src={paper.visual} alt={paper.visualAlt} loading="lazy" /><figcaption>{paper.visualCaption}</figcaption></figure>}
+            </div>
             <div class="publication-copy">
               <p class="paper-title">{paper.title}</p>
               <p class="paper-authors">{paper.authors}</p>
               <p class="paper-venue">{paper.venue}</p>
               {paper.url && <a class="paper-link" href={paper.url} target="_blank" rel="noreferrer">Paper <span aria-hidden="true">↗</span></a>}
-            </div>
-            <div class="publication-aside">
               <span class={`status ${paper.status === 'Published' ? 'published' : ''}`}>{paper.status}</span>
-              {paper.visual && <figure class="publication-figure"><img src={paper.visual} alt={paper.visualAlt} loading="lazy" /><figcaption>{paper.visualCaption}</figcaption></figure>}
             </div>
           </li>)}
         </ol>
@@ -115,14 +115,14 @@ import { profile, research, publications, experience, education } from '../data/
     .item-title span,.research-item small { color:#79807b; font-size:10px; }
     .research-item p { margin:7px 0 8px; color:#626964; font-size:12px; line-height:1.65; }
     .publication-list { margin:0; padding:0; list-style:none; }
-    .publication-item { display:grid; grid-template-columns:minmax(0,1fr) 150px; align-items:start; gap:20px; padding:17px 0; border-top:1px solid #edf0ed; }
+    .publication-item { display:grid; grid-template-columns:205px minmax(0,1fr); align-items:start; gap:20px; padding:17px 0; border-top:1px solid #edf0ed; }
     .publication-copy { min-width:0; }
     .paper-title { max-width:650px; margin:0 0 4px; font-size:13px; font-weight:600; line-height:1.55; }
     .paper-authors,.paper-venue { margin:0; color:#707772; font-size:11px; line-height:1.6; }
     .paper-venue { margin-top:2px; color:#526b58; }
-    .publication-aside { display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
-    .publication-figure { width:100%; margin:0; }
-    .publication-figure img { display:block; width:100%; height:72px; object-fit:cover; object-position:center; border:1px solid #e5e9e5; background:#f7f8f5; }
+    .publication-aside { min-width:0; }
+    .publication-figure { margin:0; }
+    .publication-figure img { display:block; width:100%; height:112px; object-fit:contain; object-position:center; border:1px solid #e5e9e5; background:#f7f8f5; }
     .publication-figure figcaption { margin-top:5px; color:#737a75; font-size:9px; line-height:1.45; }
     .paper-link { display:inline-block; margin-top:7px; font-size:10px; text-decoration:none; }
     .status { align-self:start; padding-top:2px; color:#a26b45; font-size:9px; letter-spacing:.04em; text-transform:uppercase; white-space:nowrap; }
@@ -151,8 +151,8 @@ import { profile, research, publications, experience, education } from '../data/
       h1 { font-size:46px; }
       .lede { font-size:15px; }
       .research-list { grid-template-columns:1fr; }
-      .publication-item { grid-template-columns:minmax(0,1fr) 96px; gap:12px; }
-      .publication-figure img { height:58px; }
+      .publication-item { grid-template-columns:112px minmax(0,1fr); gap:12px; }
+      .publication-figure img { height:76px; }
       .publication-figure figcaption { font-size:8px; }
       .experience-item,.education-list article { grid-template-columns:1fr; gap:5px; }
       .basketball-note { grid-template-columns:1fr; gap:18px; padding:19px; }
