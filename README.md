@@ -13,6 +13,6 @@ Set the repository's Pages source to GitHub Actions and add an Astro build workf
 ## Content review notes
 
 - Resume email appears as `yjsun2@iillinois.edu`, likely a typo; email link is intentionally omitted pending confirmation.
-- Amazon internship dates are shown as May–August 2026, as listed in the provided resume. Confirm status and wording before publishing outcomes.
+- Amazon internship dates are shown as May–August 2026, as listed in the provided resume. Public copy stays high-level and omits project-specific outcomes.
 - No headshot, publication links, or project links were provided. Their placeholders are omitted or labeled in content rather than fabricated.
 - Amazon experience copy is excluded from this public site until approved for disclosure; resume contains details that may be confidential.
