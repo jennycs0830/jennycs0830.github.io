@@ -47,6 +47,12 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
             <div class="item-title"><h3>{item.title}</h3><span>{item.area}</span></div>
             <p>{item.description}</p>
             <small>{item.note}</small>
+            {publications.some((paper) => paper.project === item.title) && <div class="research-works">
+              {publications.filter((paper) => paper.project === item.title).map((paper) => <div class="research-work">
+                <p class="research-work-title">{paper.title}</p>
+                <small class="research-work-status">{paper.venue}</small>
+              </div>)}
+            </div>}
           </article>)}
         </div>
       </section>
@@ -191,6 +197,9 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .item-title { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:4px 12px; }
     .item-title span,.research-item small { color:#79807b; font-size:10px; }
     .research-item p { margin:7px 0 8px; color:#626964; font-size:12px; line-height:1.65; }
+    .research-works { display:grid; gap:9px; margin-top:12px; padding-top:10px; border-top:1px solid #edf0ed; }
+    .research-work-title { margin:0 !important; color:#39443c !important; font-size:11px !important; font-weight:600; line-height:1.5 !important; }
+    .research-work-status { display:block; margin-top:3px; color:#718075 !important; font-size:9px !important; }
     .publication-list { margin:0; padding:0; list-style:none; }
     .publication-item { display:grid; grid-template-columns:205px minmax(0,1fr); align-items:start; gap:20px; padding:17px 0; border-top:1px solid #edf0ed; }
     .publication-copy { min-width:0; }
