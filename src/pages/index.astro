@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { profile, research, publications, experience, education } from '../data/site.js';
 const selectedPublications = publications.filter((paper) => paper.status === 'Published');
 ---
-<BaseLayout title="Yi-Jyun Sun | Research Portfolio" description="Research portfolio of Yi-Jyun (Jenny) Sun, computer science graduate student at UIUC.">
+<BaseLayout title="Yi-Jyun Sun | Research Portfolio" description="Research portfolio of Yi-Jyun (Jenny) Sun, M.S. thesis student in Computer Science at UIUC.">
   <div class="site-shell">
     <header class="site-header">
       <a class="wordmark" href="#top">Yi-Jyun Sun</a>
@@ -15,9 +15,9 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     <main id="top">
       <section class="intro" id="about">
         <div class="intro-copy">
-          <p class="eyebrow">M.S. student · Computer Science · UIUC</p>
+          <p class="eyebrow">M.S. student · Thesis option · Computer Science · UIUC</p>
           <h1>Hi, I’m Jenny.</h1>
-          <p class="lede">I’m Yi-Jyun Sun, a graduate student at the University of Illinois Urbana-Champaign. I study how language technologies can help people work with complex information, especially in healthcare, education, and conversational AI.</p>
+          <p class="lede">I’m Yi-Jyun Sun, an M.S. student in Computer Science at the University of Illinois Urbana-Champaign, pursuing the thesis option. My research explores how language technologies can help people work with complex information, especially in healthcare, education, and conversational AI.</p>
           <p class="contact-line">Illinois, United States <span>·</span> <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a> <span>·</span> <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a></p>
         </div>
         <img class="intro-photo" src="/images/jenny-sun.jpg" alt="Portrait of Yi-Jyun (Jenny) Sun" fetchpriority="high" />
