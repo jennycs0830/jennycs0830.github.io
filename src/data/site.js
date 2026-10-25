@@ -21,8 +21,8 @@ export const publications = [
   { authors: 'N. K. Hoang, S. Mehri, T.-A. Hsu, Y.-J. Sun, Q. X. N. Truong, K. D. Doan, D. Hakkani-Tür', title: 'PSI-Bench: Interpretable and Clinically Meaningful Evaluation of Depression Patient Simulators.', venue: 'SIGDIAL Social Sim Workshop, 2026 · Best Paper Award', status: 'Published', url: 'https://arxiv.org/abs/2604.25840', codeUrl: 'https://github.com/nguyenkhoihoang/PSI-Bench' },
   { authors: 'S. Jhunjhunwala, Y.-J. Sun, A. Deora, Z. Wang, N. B. Shankar, T. Christ, C. Wang, A. Alwan, D. Hakkani-Tür', title: 'The effect of transcription quality on LLM-judge scoring: a case study of ASR mediated children QA grading.', venue: 'Under review at ICASSP 2027', status: 'Under review' },
   { authors: 'Y. Li, Y.-J. Sun, V. Nguyen, K. Unnikrishnan, A. Agrawal, D. Hakkani-Tür', title: 'From Tacit Understanding to Downstream Collaboration.', venue: 'In preparation', status: 'In preparation' },
-  { authors: 'S. Dey, Y.-J. Sun, D. Hakkani-Tür, G. Tür', title: 'Know Your Mistakes: Towards Preventing Overreliance on Task-Oriented Conversational AI Through Accountability Modeling.', venue: 'Association for Computational Linguistics (ACL), 2025', status: 'Published' },
-  { authors: 'Y.-J. Sun, S. Dey, D. Hakkani-Tür, G. Tür', title: 'Confidence Estimation for LLM-based Dialogue State Tracking.', venue: 'IEEE Spoken Language Technology Workshop (SLT), 2024', status: 'Published' },
+  { authors: 'S. Dey, Y.-J. Sun, D. Hakkani-Tür, G. Tür', title: 'Know Your Mistakes: Towards Preventing Overreliance on Task-Oriented Conversational AI Through Accountability Modeling.', venue: 'Association for Computational Linguistics (ACL), 2025', status: 'Published', url: 'https://arxiv.org/abs/2501.10316', codeUrl: 'https://github.com/uiuc-conversational-ai-lab/Accountable-DST' },
+  { authors: 'Y.-J. Sun, S. Dey, D. Hakkani-Tür, G. Tür', title: 'Confidence Estimation for LLM-based Dialogue State Tracking.', venue: 'IEEE Spoken Language Technology Workshop (SLT), 2024', status: 'Published', url: 'https://arxiv.org/abs/2409.09629', codeUrl: 'https://github.com/jennycs0830/Confidence_Score_DST' },
 ];
 
 export const experience = [
