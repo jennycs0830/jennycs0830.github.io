@@ -56,7 +56,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
               <div class="research-publication-copy">
                 <p class="research-work-label">Related research</p>
                 <h4 class="research-work-title">{paper.title}</h4>
-                <p class="research-work-authors">{paper.authors.split(/(Y\\.-J\\. Sun)/).map((author) => author === 'Y.-J. Sun' ? <strong class="author-self">{author}</strong> : author)}</p>
+                <p class="research-work-authors">{paper.authors.split(/(Y\.-J\. Sun)/).map((author) => author === 'Y.-J. Sun' ? <strong class="author-self">{author}</strong> : author)}</p>
                 <p class="research-work-role">{paper.projectRole}</p>
                 {paper.collaboration && <p class="research-work-collaboration"><span>Collaboration</span>{paper.collaboration}</p>}
                 <p class="research-work-venue">{paper.venue}</p>
