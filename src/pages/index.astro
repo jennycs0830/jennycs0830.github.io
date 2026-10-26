@@ -69,12 +69,14 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
             </article>)}
           </article>)}
         </div>
-        {publications.filter((paper) => paper.status === 'In preparation' && !paper.project).map((paper) => <div class="independent-work">
-          <span class="independent-work-status">In preparation</span>
-          <p class="independent-work-title">{paper.title}</p>
-          {paper.projectRole && <p class="independent-work-description">{paper.projectRole}</p>}
+        {publications.filter((paper) => paper.status === 'In preparation' && !paper.project).map((paper) => <article class="independent-work">
           {paper.visual && <figure class="independent-work-visual"><img src={paper.visual} alt={paper.visualAlt} loading="lazy" /></figure>}
-        </div>)}
+          <div class="independent-work-copy">
+            <span class="independent-work-status">In preparation</span>
+            <p class="independent-work-title">{paper.title}</p>
+            {paper.projectRole && <p class="independent-work-description">{paper.projectRole}</p>}
+          </div>
+        </article>)}
       </section>
 
       <section class="content-section" id="publications">
@@ -238,12 +240,13 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
      .research-work-venue { margin:0; color:#245e91; font-size:10px; line-height:1.5; }
     .research-publication .paper-links { gap:12px; }
     .research-publication .paper-link { margin-top:5px; font-size:9px; }
-    .independent-work { margin-top:18px; padding:12px 14px; border:1px solid #dce8f1; background:#fff; }
+    .independent-work { display:grid; grid-template-columns:150px minmax(0,1fr); align-items:start; gap:15px; margin-top:15px; padding:13px 0 0; border-top:1px solid #dce8f1; }
+    .independent-work-copy { min-width:0; }
     .independent-work-status { color:#bd4828; font-size:9px; letter-spacing:.06em; text-transform:uppercase; }
     .independent-work-title { margin:5px 0 0; color:#253e5a; font-size:11px; font-weight:600; line-height:1.5; }
     .independent-work-description { margin:6px 0 0; color:#626964; font-size:11px; line-height:1.6; }
-    .independent-work-visual { margin:14px 0 0; padding:8px; border:1px solid #dce8f1; background:#fff; }
-    .independent-work-visual img { display:block; width:100%; height:auto; }
+    .independent-work-visual { min-width:0; margin:0; }
+    .independent-work-visual img { display:block; width:100%; height:88px; object-fit:contain; border:1px solid #dce8f1; background:#fff; }
     .publication-list { margin:0; padding:0; list-style:none; }
     .publication-item { display:grid; grid-template-columns:205px minmax(0,1fr); align-items:start; gap:20px; padding:17px 0; border-top:1px solid #edf0ed; }
     .publication-copy { min-width:0; }
