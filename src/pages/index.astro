@@ -46,7 +46,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
           {research.map((item) => <article class="research-item project-card">
             <div class="item-title"><h3>{item.title}</h3><span>{item.area}</span></div>
             <p class="project-vision">{item.description}</p>
-            {item.url && <p class="project-website"><a href={item.url} target="_blank" rel="noreferrer">Project website <span aria-hidden="true">↗</span></a></p>}
+            {item.url && <p class="project-website"><a href={item.url} target="_blank" rel="noreferrer">CELaRAI project website <span aria-hidden="true">↗</span></a></p>}
             <p class="project-collaboration"><span>Collaboration</span>{item.collaboration}</p>
             <small class="research-project-status">{item.note}</small>
             {publications.filter((paper) => paper.project === item.title).map((paper) => <article class="research-publication">
