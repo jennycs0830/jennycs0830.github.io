@@ -35,7 +35,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
 
       <header class="site-header">
         <nav aria-label="Main navigation">
-          <a href="#research">Research</a><a href="#publications">Publications</a><a href="#service">Service</a><a href="#experience">Experience</a><a href="#outside">Outside the lab</a>
+          <a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#service">Service</a><a href="#outside">Outside the lab</a>
         </nav>
       </header>
 
@@ -97,18 +97,6 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
         <a class="all-papers-link" href="/publications/">All papers <span aria-hidden="true">↗</span></a>
       </section>
 
-      <section class="content-section service-section" id="service">
-        <div class="section-heading"><p class="eyebrow">Community contributions</p><h2>Service</h2></div>
-        <div class="service-grid">
-          {service.map((group) => <article class="service-group">
-            <h3>{group.category}</h3>
-            <ul>
-              {group.items.map((item) => <li><span class="service-year">{item.year}</span><span>{item.role}</span></li>)}
-            </ul>
-          </article>)}
-        </div>
-      </section>
-
       <section class="content-section" id="experience">
         <div class="section-heading"><p class="eyebrow">Research & industry</p><h2>Experience</h2></div>
         <div class="experience-list">
@@ -120,6 +108,18 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
               <p class="detail">{item.detail}</p>
             </div>
             <p class="dates">{item.dates}</p>
+          </article>)}
+        </div>
+      </section>
+
+      <section class="content-section service-section" id="service">
+        <div class="section-heading"><p class="eyebrow">Community contributions</p><h2>Service</h2></div>
+        <div class="service-grid">
+          {service.map((group) => <article class="service-group">
+            <h3>{group.category}</h3>
+            <ul>
+              {group.items.map((item) => <li><span class="service-year">{item.year}</span><span>{item.role}</span></li>)}
+            </ul>
           </article>)}
         </div>
       </section>
