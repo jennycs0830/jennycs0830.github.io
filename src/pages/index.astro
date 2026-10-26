@@ -73,6 +73,7 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
           <span class="independent-work-status">In preparation</span>
           <p class="independent-work-title">{paper.title}</p>
           {paper.projectRole && <p class="independent-work-description">{paper.projectRole}</p>}
+          {paper.visual && <figure class="independent-work-visual"><img src={paper.visual} alt={paper.visualAlt} loading="lazy" /></figure>}
         </div>)}
       </section>
 
@@ -241,6 +242,8 @@ const selectedPublications = publications.filter((paper) => paper.status === 'Pu
     .independent-work-status { color:#bd4828; font-size:9px; letter-spacing:.06em; text-transform:uppercase; }
     .independent-work-title { margin:5px 0 0; color:#253e5a; font-size:11px; font-weight:600; line-height:1.5; }
     .independent-work-description { margin:6px 0 0; color:#626964; font-size:11px; line-height:1.6; }
+    .independent-work-visual { margin:14px 0 0; padding:8px; border:1px solid #dce8f1; background:#fff; }
+    .independent-work-visual img { display:block; width:100%; height:auto; }
     .publication-list { margin:0; padding:0; list-style:none; }
     .publication-item { display:grid; grid-template-columns:205px minmax(0,1fr); align-items:start; gap:20px; padding:17px 0; border-top:1px solid #edf0ed; }
     .publication-copy { min-width:0; }
